@@ -1,3 +1,7 @@
+// Imports
+import React from 'react';
+import './nav.css';
+
 const Navbar = () => {
     return (
         <nav className = 'nav'>
@@ -5,51 +9,21 @@ const Navbar = () => {
                 <a className = "nav-items">
                     
                     {/* Saved Events */}
-                    <a href = "#Saved Events">
-                        <Link
-                        activeClass = "active"
-                        to = "saved events"
-                        spy = {true}
-                        smooth = {true}
-                        offset = {50}
-                        duration = {1000}
-                        >
+                    <a href = 'SavedEvents'>
                             Saved Events
-                        </Link>
                     </a>
 
                     {/* Search Bar */}
                     <a>
-                        <Link
-                        activeClass = "active"
-                        to = "search bar"
-                        spy = {true}
-                        smooth = {true}
-                        offset = {50}
-                        duration = {1000}
-                        >
-                            Search Bar
-                        </Link>
+                        This will be the Search Bar
                     </a>
 
                     {/* Logout */}
                     <a>
-                        <Link
-                        activeClass = "active"
-                        to = "logout"
-                        spy = {true}
-                        smooth = {true}
-                        offset = {50}
-                        duration = {1000}
-                        >
-                            Logout
-                        </Link>
+                        Logout Button
                     </a>
-
                 </a>
             </div>
-
-            <button onClick = {closeSideNav}><i className='fa fa-close'></i></button>
         </nav> 
     )
 };
