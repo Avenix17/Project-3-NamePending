@@ -1,5 +1,4 @@
 const {Schema, model, Types} = require('mongoose');
-const { deflateSync } = require('zlib');
 
 const reactionSchema = new Schema ({
     reactionId: {
