@@ -23,7 +23,7 @@ function App() {
 			
 			{/* Footer */}
 			<div id = 'footer'>
-				<Footer version='V0.1.1----' />
+				<Footer version = 'V0.1.1----' />
 			</div>
 
 		</div>

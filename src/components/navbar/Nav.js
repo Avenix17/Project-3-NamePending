@@ -1,5 +1,6 @@
 // Imports
 import React from 'react';
+import Searchbar from './Searchbar';
 import './nav.css';
 
 const Navbar = () => {
@@ -16,6 +17,7 @@ const Navbar = () => {
                     {/* Search Bar */}
                     <a>
                         This will be the Search Bar
+                        <Searchbar />
                     </a>
 
                     {/* Logout */}
