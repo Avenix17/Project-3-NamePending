@@ -9,13 +9,14 @@ import Navlogo from "./components/Banner2.png"
 function App() {
 	return (
 		<div>
-
+			//Generates the header via props to react
 			{<Header title="Under a-tack" />}
+			//this is to pass in a backgroundImage to Nav if we do so?
 			<div id="imgBack" style={{ backgroundImage: `url(${Navlogo})` }}>
 				
 			</div>
-		
-			<Footer id="footer" version='V0.1.1----' />
+			//id for footer for styling and V for version contol
+			<Footer id="footer" version='V0.0.1----' />
 		</div>
 	);
 }
