@@ -1,4 +1,5 @@
 const {Schema, model, Types} = require('mongoose');
+const { deflateSync } = require('zlib');
 
 const reactionSchema = new Schema ({
     reactionId: {
@@ -34,9 +35,18 @@ const eventsSchema = new Schema ({
         required: true,
     },
 
-    date: {
-        
+    startdate: {
+        type: Date,
+        default: () => Date.now() + 7*24*60*60*1000,
+        required: true
     },
+
+    enddate: {
+        type: Date,
+        default: () => Date.now() + 7*24*60*60*1000,
+        required: true
+    },
+
     reactions: [reactionSchema]
 },
     {
