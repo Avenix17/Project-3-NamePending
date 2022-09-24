@@ -7,7 +7,6 @@ const Header = (props) => {
 	console.log("Head props", props)
 	return (
 		<div id = "header">
-			Under a-tack
 			<div id = "head-content">
 				
 			</div>

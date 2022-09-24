@@ -1,18 +1,28 @@
 // Imports
-import React from 'react';
+import React, {useState} from 'react';
 import Searchbar from './navbar components/Searchbar';
 import EventInput from './navbar components/CreateEvent';
 import './nav.css';
 
 const Navbar = () => {
+    // Saved events button
+
+    // Event creation button
+    const [showEvent, setShowEvent] = useState(false)
+    const createEventButton = () => {
+        setShowEvent(true)
+    };
+
     return (
         <nav className = 'nav'>
             <div className = 'nav-items'>
                 
                 {/* Saved Events */}
-                <button id = 'savedEvents'>
-                        Saved Events
-                </button>
+                <div id = 'savedEvents'>
+                    <button id = 'savedEventsButton'>
+                            Saved Events
+                    </button>
+                </div>
 
                 {/* Search Bar */}
                 <div id = 'searchBar'>
@@ -21,7 +31,10 @@ const Navbar = () => {
 
                 {/* Event Creation */}
                 <div id = 'createEvent'>
-                    <EventInput />
+                    <button id = 'eventInputButton' onClick = {createEventButton} value = "Create Event">
+                        { showEvent ? <EventInput /> : null}
+                        .
+                    </button>
                 </div>
 
                 {/* Logout */}

@@ -1,8 +1,8 @@
-import Header from './components/header/Header';
+import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/navbar/Nav';
 import Main from './components/Main/Main';
-import Calendar from './components/Calendar/Calendar';
+// import Calendar from './components/Calendar/Calendar';
 import EventDate from './components/calendar-list/calendar-list';
 import SavedEvents from './components/saved-list/saved-list';
 import React from "react";
@@ -26,7 +26,7 @@ function App() {
 			
 			{/* Main */}
 			<div id = 'main'>
-				<Calendar />
+				{/* <Calendar /> */}
 				<Main />
 				<EventDate />
 				<SavedEvents />

@@ -26,7 +26,7 @@ const Searchbar = () => {
                 type = 'text'
                 placeholder = 'Search here'
                 onChange = {handleChange}
-                value = {searchInput} 
+                value = {searchInput}
             />
 
             {/* <table>
@@ -35,8 +35,6 @@ const Searchbar = () => {
             </tr>
 
             {{* Database here *}.map(( {* Database here *} , index) => {
-
-
 
             <tr>
                 <td>{{* Database here *} {* Array data name *} }</td>

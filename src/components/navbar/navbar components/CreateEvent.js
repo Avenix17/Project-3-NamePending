@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import "../../../App";
+import "./CreateEvent.css";
 
 const EventInput = () => {
 
@@ -7,6 +7,13 @@ const EventInput = () => {
     const [eventDescriptionInput, setEventDescriptionInput] = useState("");
     const [eventStartDate, setEventStartDate] = useState("");
     const [eventEndDate, setEventEndDate] = useState("");
+    const [eventLocation, setEventLocation] = useState("");
+
+    // Event creation close button
+    const [closeEventCreation, setCloseEventCreation] = useState(false)
+    const createEventButton = () => {
+        setCloseEventCreation(true)
+    };
 
     return (
         <form>
@@ -18,20 +25,30 @@ const EventInput = () => {
                     value = {eventNameInput}
                     onChange = {(e) => setEventNameInput(e.target.value)}
                     label = 'Event Name'
-                />
+                /> 
 
                 {/* Event Start Date */}
                 <input 
-                    type ='date'
+                    type = 'date'
                     value = {eventStartDate}
                     onChange = {(e) => setEventStartDate(e.target.value)}
+                    label = 'Event Start Date'
                 />
 
                 {/* Event End Date */}
                 <input 
-                    type ='date'
+                    type = 'date'
                     value = {eventEndDate}
                     onChange = {(e) => setEventEndDate(e.target.value)}
+                    label = 'Event End Date'
+                />
+
+                {/* Event location */}
+                <input 
+                    type = 'text'
+                    value = {eventLocation}
+                    onChange = {(e) => setEventLocation(e.target.value)}
+                    label = 'Event Location'
                 />
 
                 {/* Event Description */}
@@ -41,6 +58,13 @@ const EventInput = () => {
                     onChange =  {(e) => setEventDescriptionInput(e.target.value)}
                     label = 'Event Description'
                 />
+
+                <div id = 'close button'>
+                    <button id = 'eventInputButton' onClick = {createEventButton} value = "Create Event">
+                        { closeEventCreation ? <EventInput /> : null}
+                        close
+                    </button>
+                </div>
             </label>
         </form>
     );
