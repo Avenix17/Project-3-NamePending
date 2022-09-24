@@ -27,7 +27,7 @@ const Searchbar = () => {
                 placeholder = 'Search here'
                 onChange = {handleChange}
                 value = {searchInput} 
-                />
+            />
 
             {/* <table>
             <tr>

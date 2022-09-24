@@ -41,7 +41,6 @@ const EventInput = () => {
                     onChange =  {(e) => setEventDescriptionInput(e.target.value)}
                     label = 'Event Description'
                 />
-
             </label>
         </form>
     );
