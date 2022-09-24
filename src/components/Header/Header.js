@@ -6,11 +6,11 @@ import "./header.css"
 const Header = () => {
 	return (
 		<header id = "header">
-		<div id = "head-content">
-		<p id="headReact">
-			Under a-tack
-		</p> 
-		</div>
+			<div id = "head-content">
+				<p id="headReact">
+					Under a-tack
+				</p> 
+			</div>
 		</header>
 	)
 
