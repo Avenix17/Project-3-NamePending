@@ -1,6 +1,7 @@
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/navbar/Nav';
+import Main from './components/Main/Main';
 import React from "react";
 import './App.css'
 
@@ -18,6 +19,11 @@ function App() {
 				<Navbar />
 			</div>
 			
+			{/* Main */}
+			<div id = 'main'>
+				<Main />
+			</div>
+
 			{/* Footer */}
 			<div id = 'footer'>
 				<Footer version = 'V0.1.1----' />
