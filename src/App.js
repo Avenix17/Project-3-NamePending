@@ -12,7 +12,7 @@ function App() {
 
 			{/* Header */}
 			<div id = 'header'>
-				<Header title="Under a-tack" />
+				<Header title = "Under a-tack" />
 			</div>
 			
 			<div id = 'navbar'>

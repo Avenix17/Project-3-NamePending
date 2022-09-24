@@ -9,13 +9,12 @@ const Navbar = () => {
             <div className = 'nav-items'>
                 
                 {/* Saved Events */}
-                <a href = '#SavedEvents'>
+                <button id = 'savedEvents'>
                         Saved Events
-                </a>
+                </button>
 
                 {/* Search Bar */}
                 <div id = 'searchBar'>
-                    This will be the Search Bar
                     <Searchbar />
                 </div>
 
