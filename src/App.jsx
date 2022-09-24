@@ -9,6 +9,7 @@ import React from "react";
 
 
 import './App.css'
+import EventInput from './components/navbar/navbar components/CreateEvent';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
 			<div id = 'main'>
 				<Calendar />
 				<Main />
+				<EventInput />
 				<EventDate />
 				<SavedEvents />
 			</div>
