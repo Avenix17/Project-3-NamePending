@@ -1,6 +1,7 @@
 // Imports
 import React from 'react';
-import Searchbar from './Searchbar';
+import Searchbar from './navbar components/Searchbar';
+import EventInput from './navbar components/CreateEvent';
 import './nav.css';
 
 const Navbar = () => {
@@ -9,14 +10,18 @@ const Navbar = () => {
             <div className = 'nav-items'>
                 
                 {/* Saved Events */}
-                <a href = '#SavedEvents'>
+                <button id = 'savedEvents'>
                         Saved Events
-                </a>
+                </button>
 
                 {/* Search Bar */}
                 <div id = 'searchBar'>
-                    This will be the Search Bar
                     <Searchbar />
+                </div>
+
+                {/* Event Creation */}
+                <div id = 'createEvent'>
+                    <EventInput />
                 </div>
 
                 {/* Logout */}

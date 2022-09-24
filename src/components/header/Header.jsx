@@ -1,13 +1,17 @@
 import React from "react";
+import "./header.css"
 // import myLogo from 
 
 //passing in props to generate Header
-function Header (props) {
+const Header = (props) => {
 	console.log("Head props", props)
 	return (
-		<div id="headReact">
+		<div id = "header">
 			Under a-tack
-		</div> 
+			<div id = "head-content">
+				
+			</div>
+		</div>
 	)
 
 }
