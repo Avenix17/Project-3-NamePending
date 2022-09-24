@@ -6,7 +6,7 @@ const {
     createComments,
     updateComments,
     deleteComments
-} = require ('../../controllers/comment-controller');
+} = require ('../../controllers/comments-controller');
 
 router.route('/').get(getComments).post(createComments);
 
