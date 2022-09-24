@@ -12,7 +12,7 @@ const EventDate = () => {
 			</div>
 
 		</div>
-		
+
 		</div>
 		
 		
@@ -20,3 +20,5 @@ const EventDate = () => {
 		
 		)
 };
+
+export default EventDate

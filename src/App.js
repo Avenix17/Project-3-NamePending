@@ -15,7 +15,7 @@ function App() {
 				<Header title="Under a-tack" />
 			</div>
 			
-			<div id = 'navbar'>
+			<div id = 'nav'>
 				<Navbar />
 			</div>
 			
@@ -23,6 +23,7 @@ function App() {
 			<div id = 'main'>
 				<Main />
 			</div>
+
 
 			{/* Footer */}
 			<div id = 'footer'>
