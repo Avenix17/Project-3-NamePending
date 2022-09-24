@@ -9,6 +9,7 @@ function Calendar() {
     <div className='app'>
       <h1 className='text-center'>React Calendar</h1>
       <div className='calendar-container'>
+        {/* Here is where we will need to connect to the feed component for activity information */}
         <Calendar onChange={setDate} value={date} />
       </div>
       <p className='text-center'>
