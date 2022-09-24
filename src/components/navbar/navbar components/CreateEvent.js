@@ -62,7 +62,7 @@ const EventInput = () => {
                 <div id = 'close button'>
                     <button id = 'eventInputButton' onClick = {createEventButton} value = "Create Event">
                         { closeEventCreation ? <EventInput /> : null}
-                        close
+                        Exit
                     </button>
                 </div>
             </label>

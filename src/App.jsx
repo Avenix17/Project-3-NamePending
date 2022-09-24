@@ -7,10 +7,7 @@ import EventDate from './components/calendar-list/calendar-list';
 import SavedEvents from './components/saved-list/saved-list';
 import React from "react";
 
-
 import './App.css'
-import EventInput from './components/navbar/navbar components/CreateEvent';
-
 
 function App() {
 	return (
@@ -29,11 +26,9 @@ function App() {
 			<div id = 'main'>
 				{/* <Calendar /> */}
 				<Main />
-				<EventInput />
 				<EventDate />
 				<SavedEvents />
 			</div>
-
 
 			{/* Footer */}
 			<div id = 'footerMain'>

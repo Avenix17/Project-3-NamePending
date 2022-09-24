@@ -14,7 +14,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className = 'nav'>
+        <nav className = 'topnav'>
             <div className = 'nav-items'>
                 
                 {/* Saved Events */}
@@ -33,7 +33,7 @@ const Navbar = () => {
                 <div id = 'createEvent'>
                     <button id = 'eventInputButton' onClick = {createEventButton} value = "Create Event">
                         { showEvent ? <EventInput /> : null}
-                        .
+                        Create Event
                     </button>
                 </div>
 

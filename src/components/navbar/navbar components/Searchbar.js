@@ -39,7 +39,6 @@ const Searchbar = () => {
             <tr>
                 <td>{{* Database here *} {* Array data name *} }</td>
                 <td>{{* Database here *} {* Array data name *} }</td>
-
             </tr>
 
             })}
