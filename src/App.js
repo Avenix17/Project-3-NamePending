@@ -1,5 +1,5 @@
-import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import Navbar from './components/navbar/Nav';
 import React from "react";
 import './App.css'
@@ -20,7 +20,7 @@ function App() {
 			
 			{/* Footer */}
 			<div id = 'footer'>
-				<Footer version='V0.1.1----' />
+				<Footer version = 'V0.1.1----' />
 			</div>
 
 		</div>

@@ -1,23 +1,13 @@
 import React from "react";
-import { version } from "react-dom";
 
 //passing in props to generate the footer to the HTML
-const Footer = () => {
+function Footer (props) {
+	console.log("Footer Props", props)
 	return (
-		<footer id="footer">
-			<div id="foot-content">
-				<p id="nav-items">
-
-					<p id="version">
-
-
-					</p>
-
-				</p>
-
-			</div>
-
-		</footer>
+		<footer>
+			<p>{`${props.version}By:Us`}</p>
+			<p> By: Avyrie Fellows GitHub: Avenix17, Bryson Benson GitHub: Firm-Tofu10, Ciara Gaunt GitHub: , Kate Patch GitHub: Katepatch , Khoi Vu GitHub: ChefKhoiRD, Micah Culverhouse GitHub: HolyMicah </p>
+		</footer> 
 	)
 
 }
