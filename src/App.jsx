@@ -26,7 +26,10 @@ function App() {
 			
 			{/* Main */}
 			<div id = 'main'>
+				<Calendar />
 				<Main />
+				<EventDate />
+				<SavedEvents />
 			</div>
 
 
