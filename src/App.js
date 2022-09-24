@@ -14,10 +14,6 @@ function App() {
 				<Header title="Under a-tack" />
 			</div>
 			
-			{/* Logo - commented out because there is no logo yet */}
-			{/*           <div id="imgBack" style={{ backgroundImage: `url(${Navlogo})` }}></div>            */}
-				
-			{/* Navbar */}
 			<div id = 'navbar'>
 				<Navbar />
 			</div>

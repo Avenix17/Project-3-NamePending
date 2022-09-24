@@ -2,12 +2,15 @@ import React from "react";
 // import myLogo from 
 
 //passing in props to generate Header
-function Header (props) {
-	console.log("Head props", props)
+const Header = () => {
 	return (
-		<div id="headReact">
+		<header id = "header">
+		<div id = "head-content">
+		<p id="headReact">
 			Under a-tack
-		</div> 
+		</p> 
+		</div>
+		</header>
 	)
 
 }
