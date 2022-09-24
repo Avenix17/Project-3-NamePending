@@ -3,7 +3,7 @@ const { Users, Comments, Events } = require('../models');
 module.exports = {
     getAllUsers(req, res) {
         Users.find({})
-            .then((user) => res.json(user))
+            .then((users) => res.json(users))
             .catch((err) => res.status(500).json(err));
     },
 
@@ -15,7 +15,7 @@ module.exports = {
         .then((users) =>
             !users
                 ? res.status(404).json({ message: "Can't find User with this ID" })
-                : res.json(user)
+                : res.json(users)
                 )
         .catch((err) => res.status(500).json(err));
     },

@@ -46,6 +46,17 @@ const eventsSchema = new Schema ({
         required: true
     },
 
+    username: {
+        type: String, 
+        required: true,
+    },
+    comments: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Comments',
+        },
+    ],
+
     reactions: [reactionSchema]
 },
     {
