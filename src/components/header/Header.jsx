@@ -3,15 +3,15 @@ import "./header.css"
 // import myLogo from 
 
 //passing in props to generate Header
-const Header = () => {
+const Header = (props) => {
+	console.log("Head props", props)
 	return (
-		<header id = "header">
+		<div id = "header">
+			Under a-tack
 			<div id = "head-content">
-				<p id="headReact">
-					Under a-tack
-				</p> 
+				
 			</div>
-		</header>
+		</div>
 	)
 
 }

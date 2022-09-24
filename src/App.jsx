@@ -1,8 +1,13 @@
-import Header from './components/Header/Header';
+import Header from './components/header/Header';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/navbar/Nav';
 import Main from './components/Main/Main';
+import Calendar from './components/Calendar/Calendar';
+import EventDate from './components/calendar-list/calendar-list';
+import SavedEvents from './components/saved-list/saved-list';
 import React from "react";
+
+
 import './App.css'
 
 
@@ -12,7 +17,7 @@ function App() {
 
 			{/* Header */}
 			<div id = 'header'>
-				<Header title = "Under a-tack" />
+				{<Header title = "Under a-tack" />}
 			</div>
 			
 			<div id = 'nav'>
@@ -26,8 +31,8 @@ function App() {
 
 
 			{/* Footer */}
-			<div id = 'footer'>
-				<Footer version = 'V0.1.1----' />
+			<div id = 'footerMain'>
+				<Footer id = "footer" version = 'V0.1.1----' />
 			</div>
 
 		</div>

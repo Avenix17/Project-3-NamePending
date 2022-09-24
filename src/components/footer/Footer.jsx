@@ -1,7 +1,8 @@
 import React from "react";
 import "./footer.css"
 //passing in props to generate the footer to the HTML
-const Footer = () => {
+const Footer = (props) {
+	console.log("Footer Props", props)
 	return (
 		<footer id = "footer">
 			<div id = "footer-content">
@@ -14,6 +15,6 @@ const Footer = () => {
 		</footer> 
 	)
 
-}
+	}
 
 export default Footer
