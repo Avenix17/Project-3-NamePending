@@ -18,27 +18,6 @@ function App() {
 				{<Header title="Under a-tack" />}
 			</div>
 
-			<div id='nav'>
-				<Navbar />
-			</div>
-
-			<div className="flex">
-				<h1>Please Log in</h1>
-				<form>
-					<label>
-						<p>Usernamer:</p>
-						<input type="text" />
-					</label>
-					<label>
-						<p>Password:</p>
-						<input type="password" />
-					</label>
-					<div>
-						<button type="submit">Submit</button>
-					</div>
-				</form>
-			</div>
-
 			{/* Main */}
 			<div id='main'>
 				{/* <Calendar /> */}
