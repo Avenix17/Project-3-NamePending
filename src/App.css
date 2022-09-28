@@ -4,10 +4,6 @@
     --lightyellow: #ffc;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-}
 
 .title {
     text-align: center;
@@ -26,10 +22,13 @@
 body {
     margin: 20px auto;
     font-family: 'Lato';
-    background-image: url(./assets/corkboard.jpg);
-    background-size: cover;
+    background-image: url('./corkboard.jpg')
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
 
 h2 {
     font-weight: bold;
