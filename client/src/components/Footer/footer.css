@@ -7,3 +7,8 @@
 #version {
     background-color: var(--lightyellow);
 }
+
+#footer {
+    bottom: 0px;
+    position: fixed;
+}
