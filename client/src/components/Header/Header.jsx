@@ -7,14 +7,12 @@ import Navigation from '../navbar/Nav';
 const Header = (props) => {
 	console.log("Head props", props)
 	return (
-		<div id = "header">
-			<header>
+			<header id="header">
 				<div id = "head-content">
 					<h1>Under A-Tack</h1>
 					<Navigation />
 				</div>
 			</header>
-		</div>
 	)
 
 }

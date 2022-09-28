@@ -23,21 +23,13 @@ const Navbar = () => {
       
       <div className="nav-items">
         {/* Saved Events */}
-        <div id="savedEvents">
           <button id="savedEventsButton">Saved Events</button>
-        </div>
 
         {/* Event Creation */}
-        <div id="createEvent">
-          <button
-            id="eventInputButton"
-            onClick={createEventButton}
-            value="Create Event"
-          >
+          <button id="eventInputButton" onClick={createEventButton} value="Create Event">
             {showEvent ? <EventInput /> : null}
             Create Event
           </button>
-        </div>
 
         {/* Logout */}
         <button id="logout">Logout Button</button>
