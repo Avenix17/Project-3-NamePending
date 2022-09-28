@@ -3,6 +3,8 @@ import '/login.css'
 
 const Login = (props) => {
 return(
+<div className="flex">
+	<h1>Please Log in</h1>
 	<form>
 		<label>
 			<p>Usernamer:</p>
@@ -16,6 +18,7 @@ return(
 			<button type="submit">Submit</button>
 		</div>
 	</form>
+</div>	
 	)	
 }
 
