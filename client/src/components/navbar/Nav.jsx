@@ -9,9 +9,6 @@ const Navbar = () => {
 
   // Event creation button
   const [showEvent, setShowEvent] = useState(false);
-  const createEventButton = () => {
-    setShowEvent(true);
-  };
 
   return (
     <nav className="topnav">
@@ -31,10 +28,10 @@ const Navbar = () => {
         <div id="createEvent">
           <button
             id="eventInputButton"
-            onClick={createEventButton}
+            onClick={showEvent}
             value="Create Event"
           >
-            {showEvent ? <EventInput /> : null}
+
             Create Event
           </button>
         </div>
