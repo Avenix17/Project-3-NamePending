@@ -23,3 +23,6 @@
 ## Contribution
 
 Contributors: Avyrie Fellows, Khoi Vu, Ciara Gauntt, Kate Patch, Bryson Benson, Micah Culverhouse
+
+## References 
+For help with password:https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications
