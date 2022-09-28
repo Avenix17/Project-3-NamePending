@@ -7,7 +7,7 @@ return(
 	<h1>Please Log in</h1>
 	<form>
 		<label>
-			<p>Usernamer:</p>
+			<p>Username:</p>
 			<input type="text" />
 		</label>
 		<label>
