@@ -6,11 +6,19 @@ const Footer = (props) => {
 	return (
 		<footer id = "footer">
 			<div id = "footer-content">
-				<div id = "footer-items">
-					<p id = "version">
-						By: Avyrie Fellows GitHub: Avenix17, Bryson Benson GitHub: Firm-Tofu10, Ciara Gaunt GitHub: ciaragauntt, 						
-								Kate Patch GitHub: Katepatch , Khoi Vu GitHub: ChefKhoiRD, Micah Culverhouse GitHub: HolyMicah 
-					</p>
+				<div id= "footer-title-container">
+					
+					<h2 id= "footer-title">The Team</h2>
+					
+					<div id = "footer-items">
+					<a href="https://github.com/Firm-Tofu10"><button id="name-buttons">Bryson </button></a>
+					<a href="https://github.com/katepatch"><button id="name-buttons">Kate </button></a>
+					<a href="https://github.com/ChefKhoiRD"><button id="name-buttons">Khoi </button></a>
+					<a href="https://github.com/HolyMicah"><button id="name-buttons">Micah </button></a>
+					<a href="https://github.com/Avenix17"><button id="name-buttons">Avyrie </button></a>
+					<a href="https://github.com/ciaragauntt"><button id="name-buttons">Ciara </button></a>
+					
+					</div>
 				</div>
 			</div>
 		</footer> 

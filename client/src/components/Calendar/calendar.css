@@ -1,0 +1,11 @@
+:root {
+    --lightgreen: #cfc;
+    --lightpurple: #ccf;
+    --lightyellow: #ffc;
+}
+
+.calendar {
+    background-color: #ccf;
+    margin-left: 15px;
+    padding: 10px;
+}
