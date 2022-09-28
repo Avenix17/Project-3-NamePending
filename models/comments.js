@@ -19,8 +19,12 @@ const commentsSchema = new Schema({
         type: String, 
         required: true,
     },
-    
-    reactions: [reactionSchema],
+    eventname: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    // reactions: [reactionSchema],
 },
 
 {
