@@ -4,6 +4,7 @@ import './calendar-list.css'
 const EventDate = () => {
 	return (
 		<div id = 'calendar-list'>
+			Calendar List
 
 		<div id = 'date'>
 
