@@ -1,5 +1,5 @@
 import React from "react";
-import "./footer.css"
+import "./footer.css";
 //passing in props to generate the footer to the HTML
 const Footer = (props) => {
 	console.log("Footer Props", props)

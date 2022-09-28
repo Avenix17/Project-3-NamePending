@@ -1,0 +1,9 @@
+:root {
+    --lightgreen: #cfc;
+    --lightpurple: #ccf;
+    --lightyellow: #ffc;
+}
+
+#version {
+    background-color: var(--lightyellow);
+}
