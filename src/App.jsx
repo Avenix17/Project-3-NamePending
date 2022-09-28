@@ -1,6 +1,5 @@
-// import Header from './components/Header/Header'
-// import Footer from './components/Footer/Footer'
-import Navbar from './components/navbar/Nav';
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 import Main from './components/Main/Main';
 // import Calendar from './components/Calendar/Calendar';
 import EventDate from './components/calendar-list/calendar-list';
@@ -14,9 +13,9 @@ function App() {
 		<div>
 
 			{/* Header */}
-			{/* <div id='header'>
+			<div id='header'>
 				{<Header title="Under a-tack" />}
-			</div> */}
+			</div>
 
 			{/* Main */}
 			<div id='main'>
@@ -27,9 +26,9 @@ function App() {
 			</div>
 
 			{/* Footer */}
-			{/* <div id='footerMain'>
+			<div id='footerMain'>
 				<Footer id="footer" version='V0.1.1----' />
-			</div> */}
+			</div>
 
 		</div>
 	);
