@@ -13,12 +13,12 @@ function Calendarfun() {
         {/* Here is where we will need to connect to the feed component for activity information */}
         <Calendar onChange={setDate} value={date} />
       </div>
-      <p className='text-center'>
+      <div className='events-list'>
         {/* Frontend peeps: Selected date is where we will want the calendar-list (event date) to appear */}
         <span className='bold'>Selected Date:</span>{' '}
         {date.toDateString()}
         <EventDate />
-      </p>
+      </div>
     </div>
   );
 }

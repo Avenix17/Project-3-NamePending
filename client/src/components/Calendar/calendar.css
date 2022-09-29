@@ -8,26 +8,30 @@
     border-style: dotted;
 } */
 
-.react-calendar {
-    height: 90%;
-    width: 100% !important;
-}
-
 .calendar {
     margin-left: 15px;
     padding: 10px;
-    margin-bottom: 30px;
     display: flex;
     flex-direction: row;
 }
 
 .calendar-container {
-    height: 500px;
-    width: 500px;
+    display: flex;
+    flex-direction: row;
+}
+
+.events-list {
+    margin-right: 50px;
+    width: 75%;
+    background-color: var(--lightgreen);
 }
 
 /* This is all the basic react-calendar css */
 
+.react-calendar {
+    height: 100%;
+    width: 75% !important;
+}
 
 react-calendar button:enabled:hover {
     cursor: pointer;
@@ -54,7 +58,7 @@ react-calendar button:enabled:hover {
     font-size: 0.75em;
   }
   .react-calendar__month-view__weekdays__weekday {
-    padding: 5em;
+    padding: 2em;
   }
   .react-calendar__month-view__weekNumbers {
     font-weight: bold;
