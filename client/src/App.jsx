@@ -13,12 +13,12 @@ function App() {
     <div className="screen">
       <Header title="Under a-tack" />
 
-      {/* <main id="main"> */}
-        {/* <Calendarfun /> */}
+      <main id="main">
+        <Calendarfun />
         {/* <Main /> */}
         {/* <EventDate /> */}
         {/* <SavedEvents /> */}
-      {/* </main> */}
+      </main>
 
       <Footer id="footer" version="V0.1.1----" />
     </div>
