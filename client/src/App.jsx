@@ -1,31 +1,44 @@
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import Main from "./components/Main/Main";
-import Calendarfun from './components/Calendar/Calendar';
-import EventDate from "./components/calendar-list/calendar-list";
+import Calendarfun from "./components/Calendar/Calendar";
+import EventInput from "./components/create-event/CreateEvent";
 import SavedEvents from "./components/saved-list/saved-list";
 import React, { useState } from "react";
-
 import "./App.css";
 
 function App() {
+
+  const [nav] = useState(['home', 'createEvent']);
+  const [currentNav, setCurrentNav] = useState(nav[0]);
+
+  function renderComponent(currentNav) {
+    switch (currentNav) {
+      case 'home':
+        return (
+        <div>
+          <Calendarfun />
+          <SavedEvents />
+        </div>);
+      case 'createEvent':
+        return <EventInput />;
+      default:
+        return (
+          <div>
+            <Calendarfun />
+            <SavedEvents />
+          </div>);
+    }
+  }
+
   return (
     <div className="screen">
-      {/* Header */}
-      <div id="header">{<Header title="Under a-tack" />}</div>
+      <Header title="Under a-tack" currentNav={currentNav} setCurrentNav={setCurrentNav} />
 
-      {/* Main */}
       <main id="main">
-        <Calendarfun />
-        {/* <Main /> */}
-        <EventDate />
-        {/* <SavedEvents /> */}
+        { renderComponent(currentNav) }
       </main>
 
-      {/* Footer */}
-      <div id="footerMain">
-        <Footer id="footer" version="V0.1.1----" />
-      </div>
+      <Footer id="footer" version="V0.1.1----" />
     </div>
   );
 }

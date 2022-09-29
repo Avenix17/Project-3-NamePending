@@ -24,13 +24,14 @@
 }
 
 #footer-title{
-    color: #ffc;
+    color: black;
 }
 
 footer{
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 10rem;
+    height: 6rem;
+    background: #cfc99c99;
    text-align: center;
 }

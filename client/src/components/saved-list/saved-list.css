@@ -1,0 +1,13 @@
+:root {
+    --lightgreen: #cfc;
+    --lightpurple: #ccf;
+    --lightyellow: #ffc;
+}
+
+
+#saved-list {
+    background-color: var(--lightyellow);
+    margin-top: 10px;
+    margin-left: 25px;
+    margin-right: 60px;
+}
