@@ -62,7 +62,7 @@ module.exports = {
                 )
             )
             .then((users) =>
-                !user
+                !users
                     ? res.status(404).json({ message: "No comment found with this ID" })
                     : res.json({ message: "Comment successfully deleted" })
             )
