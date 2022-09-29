@@ -36,7 +36,6 @@ const Navbar = (props) => {
 // Export
 export default Navbar;
 
-
 // This is the original create event button
 {/* <button id="eventInputButton" onClick={createEventButton} value="Create Event">
 {showEvent ? <EventInput /> : null}
