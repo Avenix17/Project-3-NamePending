@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import "./CreateEvent.css";
 
 const EventInput = () => {
@@ -16,57 +16,75 @@ const EventInput = () => {
     };
 
     return (
-        <form>
-            <label>
+        <div className='event-container'>
+            <form className='create-event'>
+                <h2>Create an Event!!</h2>
+
                 {/* Event Name */}
-                <input
-                    type = 'text'
-                    placeholder = 'Enter event name'
-                    value = {eventNameInput}
-                    onChange = {(e) => setEventNameInput(e.target.value)}
-                    label = 'Event Name'
-                /> 
+                <div className='input-names'>Event Name:
+                    <input
+                        className='event-name'
+                        type='text'
+                        placeholder='Enter event name'
+                        value={eventNameInput}
+                        onChange={(e) => setEventNameInput(e.target.value)}
+                        label='Event Name'
+                    />
+                </div>
 
                 {/* Event Start Date */}
-                <input 
-                    type = 'date'
-                    value = {eventStartDate}
-                    onChange = {(e) => setEventStartDate(e.target.value)}
-                    label = 'Event Start Date'
-                />
+                <div className='input-names'>Start Date:
+                    <input
+                        className='start-date'
+                        type='date'
+                        value={eventStartDate}
+                        onChange={(e) => setEventStartDate(e.target.value)}
+                        label='Event Start Date'
+                    />
+                </div>
 
                 {/* Event End Date */}
-                <input 
-                    type = 'date'
-                    value = {eventEndDate}
-                    onChange = {(e) => setEventEndDate(e.target.value)}
-                    label = 'Event End Date'
-                />
+                <div className='input-names'>End Date:
+                    <input
+                        className='end-date'
+                        type='date'
+                        value={eventEndDate}
+                        onChange={(e) => setEventEndDate(e.target.value)}
+                        label='Event End Date'
+                    />
+                </div>
 
                 {/* Event location */}
-                <input 
-                    type = 'text'
-                    value = {eventLocation}
-                    onChange = {(e) => setEventLocation(e.target.value)}
-                    label = 'Event Location'
-                />
+                <div className='input-names'>Event Location:
+                    <input
+                        className='event-location'
+                        placeholder='Location of event'
+                        type='text'
+                        value={eventLocation}
+                        onChange={(e) => setEventLocation(e.target.value)}
+                        label='Event Location'
+                    />
+                </div>
 
                 {/* Event Description */}
-                <textarea 
-                    placeholder = 'Enter event description'
-                    value = {eventDescriptionInput}
-                    onChange =  {(e) => setEventDescriptionInput(e.target.value)}
-                    label = 'Event Description'
-                />
+                <div className='input-names'>Event Description:
+                    <textarea
+                        className='event-description'
+                        placeholder='Enter event description'
+                        value={eventDescriptionInput}
+                        onChange={(e) => setEventDescriptionInput(e.target.value)}
+                        label='Event Description'
+                    />
+                </div>
 
-                <div id = 'close button'>
-                    <button id = 'eventInputButton' onClick = {createEventButton} value = "Create Event">
-                        { closeEventCreation ? <EventInput /> : null}
-                        Exit
+                <div id='close-button'>
+                    <button id='eventInputButton' onClick={createEventButton} value="Create Event">
+                        {closeEventCreation ? <EventInput /> : null}
+                        Create!
                     </button>
                 </div>
-            </label>
-        </form>
+            </form>
+        </div>
     );
 
 };
