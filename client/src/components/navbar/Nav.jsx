@@ -1,7 +1,7 @@
 // Imports
 import React, { useState } from "react";
 import Searchbar from "./navbar components/Searchbar";
-import EventInput from "./navbar components/CreateEvent";
+import EventInput from "../create-event/CreateEvent";
 import "./nav.css";
 
 const Navbar = () => {
@@ -21,6 +21,8 @@ const Navbar = () => {
         <Searchbar />
       </div>
       
+      {/* Do we need a saved events button? Or do we want saved events to just appear below
+      the calendar? */}
       <div className="nav-items">
         {/* Saved Events */}
           <button id="savedEventsButton">Saved Events</button>
