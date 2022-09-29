@@ -17,7 +17,7 @@ function App() {
         <Calendarfun />
         {/* <Main /> */}
         {/* <EventDate /> */}
-        {/* <SavedEvents /> */}
+        <SavedEvents />
       </main>
 
       <Footer id="footer" version="V0.1.1----" />
