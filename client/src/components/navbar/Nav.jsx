@@ -11,35 +11,37 @@ const Navbar = () => {
   const [showEvent, setShowEvent] = useState(false);
 
   return (
-    <nav className="topnav">
+    <div className="topnav">
+      <nav className="nav-elements">
 
-      {/* Search Bar */}
-      <div id="searchBar">
-        <Searchbar />
-      </div>
-      
-      <div className="nav-items">
-        {/* Saved Events */}
-        <div id="savedEvents">
-          <button id="savedEventsButton">Saved Events</button>
+        {/* Search Bar */}
+        <div id="searchBar">
+          <Searchbar />
         </div>
+        
+        <div className="nav-items">
+          {/* Saved Events */}
+          <div id="savedEvents">
+            <button id="savedEventsButton">Saved Events</button>
+          </div>
 
-        {/* Event Creation */}
-        <div id="createEvent">
-          <button
-            id="eventInputButton"
-            onClick={showEvent}
-            value="Create Event"
-          >
+          {/* Event Creation */}
+          <div id="createEvent">
+            <button
+              id="eventInputButton"
+              onClick={() => setShowEvent(true)}
+              value="Create Event"
+            >
+              Create Event
+            </button>
+          </div>
 
-            Create Event
-          </button>
+          {/* Logout */}
+          <button id="logout">Logout Button</button>
         </div>
-
-        {/* Logout */}
-        <button id="logout">Logout Button</button>
-      </div>
-    </nav>
+      </nav>
+      <EventInput trigger={showEvent} setTrigger={setShowEvent} />
+    </div>
   );
 };
 
