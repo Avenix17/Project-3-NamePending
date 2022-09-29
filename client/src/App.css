@@ -43,7 +43,7 @@ main {
 body {
     /* margin: 20px auto; */
     font-family: 'Lato';
-    background-image: url('./corkboard.jpg')
+    background-image: url('./assets/corkboard.jpg')
 }
 
 * {
