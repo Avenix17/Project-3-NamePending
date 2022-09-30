@@ -17,16 +17,17 @@ function App() {
       case 'home':
         return (
         <div>
-          <Calendarfun />
-          <SavedEvents />
+          {/* <Calendarfun />
+          <SavedEvents /> */}
+					<Login />
         </div>);
       case 'createEvent':
         return <EventInput />;
       default:
         return (
           <div>
-            <Calendarfun />
-            <SavedEvents />
+            {/* <Calendarfun />
+            <SavedEvents /> */}
           </div>
           );
     }
@@ -38,7 +39,6 @@ function App() {
 
       <main id="main">
         { renderComponent(currentNav) }
-				<Login />
       </main>
 
 			
