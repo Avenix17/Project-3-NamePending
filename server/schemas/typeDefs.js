@@ -44,7 +44,8 @@ const typeDefs = gql `
         createUser(username: String!, email: String!, password: String!): User
         createEvent(eventname: String!, description: String!, startdate: Date!, enddate: Date!, username: String!): Events
         createComment(commentText: String!, createdAt: Date!, username: String!, eventname: String!): Comments
-        login(email: String!, password: String!): Auth
-    }
+        updateEvent(_id: ID!, eventname: String!, startdate: Date!, enddate: Date!): Events
+    }`
+
 
 module.exports = typeDefs;
