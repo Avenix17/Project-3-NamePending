@@ -15,6 +15,7 @@ const EventInput = () => {
         setCloseEventCreation(true)
     };
 
+
     return (
         <div className='event-container'>
             <form className='create-event'>
@@ -78,7 +79,7 @@ const EventInput = () => {
                 </div>
 
                 <div id='close-button'>
-                    <button id='eventInputButton' onClick={createEventButton} value="Create Event">
+                    <button type="button" id='eventInputButton' onClick={createEventButton} value="Create Event">
                         {closeEventCreation ? <EventInput /> : null}
                         Create!
                     </button>
