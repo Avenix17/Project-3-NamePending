@@ -17,8 +17,8 @@ function App() {
       case 'home':
         return (
         <div>
-          {/* <Calendarfun />
-          <SavedEvents /> */}
+          <Calendarfun />
+          <SavedEvents />
 					<Login />
         </div>);
       case 'createEvent':
@@ -26,8 +26,8 @@ function App() {
       default:
         return (
           <div>
-            {/* <Calendarfun />
-            <SavedEvents /> */}
+            <Calendarfun />
+            <SavedEvents />
           </div>
           );
     }
