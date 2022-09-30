@@ -81,9 +81,16 @@ const EventInput = () => {
                 </div>
 
                 <div id='close-button'>
+
+                    {/* Creates event */}
                     <button className='button' id='eventInputButton' onClick={createEventButton} value="Create Event">
                         {closeEventCreation ? <EventInput /> : null}
                         Create!
+                    </button>
+
+                    {/* Send back to homepage */}
+                    <button className='button' id='returntohome'>
+                        Return to Home
                     </button>
                 </div>
             </form>
