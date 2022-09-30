@@ -15,7 +15,7 @@
     min-width: 50%;
     height: auto;
     margin-top: 50px;
-    margin-bottom: 100px;
+    box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
 }
 
 .create-event {
@@ -31,6 +31,8 @@ h2 {
 .input-names {
     display: flex;
     flex-direction: column;
+    text-align: left;
+    font-weight: bold;
 }
 
 .event-name {
@@ -53,6 +55,13 @@ h2 {
     margin-bottom: 15px;
 }
 
-#close-buttion {
+.button {
+    font-size: large;
+    padding: 6px 12px;
+}
 
+.button:hover{
+    background-color: black;
+    color: #ffc;
+    transition-duration: 1s;
 }
