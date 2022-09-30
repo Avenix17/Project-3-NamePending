@@ -47,7 +47,8 @@ const resolver = {
                 const userCreation = await Users.create({username, email, password});
                 const token = signToken(userCreation);
                 return { token, userCreation };
-            },
+            },            
+
             login: async (parent, { email, password }) => {
                 const users = await Users.findOne({ email });
           

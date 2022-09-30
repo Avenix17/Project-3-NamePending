@@ -27,7 +27,12 @@ const typeDefs = gql `
         username: String!
         eventname: String!
     }
-    
+
+    type Auth {
+        token: ID
+        users: Users
+    }
+
     # Queries
     type Query {
         getAllUsers: [User]
@@ -41,5 +46,6 @@ const typeDefs = gql `
         createComment(commentText: String!, createdAt: Date!, username: String!, eventname: String!): Comments
         updateEvent(_id: ID!, eventname: String!, startdate: Date!, enddate: Date!): Events
     }`
+
 
 module.exports = typeDefs;

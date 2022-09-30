@@ -19,7 +19,6 @@ function App() {
         <div>
           <Calendarfun />
           <SavedEvents />
-					<Login />
         </div>);
       case 'createEvent':
         return <EventInput />;
