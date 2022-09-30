@@ -51,7 +51,6 @@ function App() {
         return (
           <div>
             <Calendarfun />
-            <SavedEvents />
           </div>
         );
       case "createEvent":
@@ -60,7 +59,6 @@ function App() {
         return (
           <div>
             <Calendarfun />
-            <SavedEvents />
           </div>
         );
     }
