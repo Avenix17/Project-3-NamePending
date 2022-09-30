@@ -9,7 +9,7 @@ const typeDefs = gql `
         email: String!
         password: String!
     }
-
+    
     type Events {
         _id: ID!
         eventname: String!
@@ -19,13 +19,13 @@ const typeDefs = gql `
         username: String!
         comments: [Comments]
     }
-
+    
     type Comments {
         _id: ID!
         commentText: String!
         createdAt: Date!
         username: String!
-        eventname: String! 
+        eventname: String!
     }
 
     type Auth {
@@ -35,18 +35,16 @@ const typeDefs = gql `
 
     # Queries
     type Query {
-        getAllUsers: [Users]
+        getAllUsers: [User]
         getAllEvents: [Events]
         getAllComments: [Comments]
     }
-
-    # Mutations 
+    # Mutations
     type Mutation {
-        createUsers(username: String! email: String! password: String!): Users
-        createEvent(eventname: String! description: String! startdate: Date!, enddate: Date!, username: String!): Events
+        createUser(username: String!, email: String!, password: String!): User
+        createEvent(eventname: String!, description: String!, startdate: Date!, enddate: Date!, username: String!): Events
         createComment(commentText: String!, createdAt: Date!, username: String!, eventname: String!): Comments
         login(email: String!, password: String!): Auth
     }
-`;
 
 module.exports = typeDefs;

@@ -19,7 +19,7 @@ const Navbar = (props) => {
     <nav className="topnav">
 
       {/* Search Bar */}
-      <div id="searchBar"><Searchbar /></div>
+      {/* <div id="searchBar"><Searchbar /></div> */}
 			{/* function searchHighlight() {
 				let Search = document.getElementById
 				("Search").value;
@@ -36,7 +36,7 @@ const Navbar = (props) => {
 
         <button id="eventInputButton" value="Create Event" className={`btn btn-dark ${currentNav === 'createEvent' && 'btn-active'}`} onClick={() => setCurrentNav('createEvent')}>Create Event</button>
 
-        <button id="logout">Logout Button</button>
+        <button id="logout">Logout</button>
       </div>
     </nav>
   );
