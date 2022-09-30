@@ -19,7 +19,7 @@ const Navbar = (props) => {
     <nav className="topnav">
 
       {/* Search Bar */}
-      <div id="searchBar"><Searchbar /></div>
+      {/* <div id="searchBar"><Searchbar /></div> */}
 			{/* function searchHighlight() {
 				let Search = document.getElementById
 				("Search").value;
