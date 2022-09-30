@@ -5,9 +5,10 @@
 }
 
 
-#saved-list {
+.saved-heading {
     background-color: var(--lightyellow);
     margin-top: 10px;
     margin-left: 25px;
     margin-right: 60px;
+    text-align: center;
 }

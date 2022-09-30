@@ -4,6 +4,10 @@
     --lightyellow: #ffc;
 }
 
+* {
+    font-family: sans-serif;
+}
+
 .event-container {
     display: block;
     margin-left: auto;
@@ -26,6 +30,7 @@
 
 h2 {
     margin-bottom: 15px;
+    border-bottom: black solid 2px;
 }
 
 .input-names {
@@ -33,6 +38,7 @@ h2 {
     flex-direction: column;
     text-align: left;
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .event-name {
@@ -58,10 +64,12 @@ h2 {
 .button {
     font-size: large;
     padding: 6px 12px;
+    border-radius: 10px;
 }
 
 .button:hover{
-    background-color: black;
+    background-color: grey;
     color: #ffc;
     transition-duration: 1s;
+    border-radius: 5px;
 }
