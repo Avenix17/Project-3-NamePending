@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "./CreateEvent.css";
+import tack from '../../assets/tack.png';
 
 const EventInput = () => {
 
@@ -18,6 +19,7 @@ const EventInput = () => {
 
     return (
         <div className='event-container'>
+            <img className='tack' src={tack} alt='This is a tack!' />
             <form className='create-event'>
                 <h2>Create an Event!!</h2>
 
@@ -79,7 +81,7 @@ const EventInput = () => {
                 </div>
 
                 <div id='close-button'>
-                    <button type="button" id='eventInputButton' onClick={createEventButton} value="Create Event">
+                    <button className='button' id='eventInputButton' onClick={createEventButton} value="Create Event">
                         {closeEventCreation ? <EventInput /> : null}
                         Create!
                     </button>

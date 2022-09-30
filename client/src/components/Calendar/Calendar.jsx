@@ -3,6 +3,7 @@ import Calendar from 'react-calendar';
 import EventDate from '../calendar-list/calendar-list'; 
 import './calendar.css';
 import 'react-calendar/dist/Calendar.css';
+import tack from '../../assets/tack.png';
 
 function Calendarfun() {
   const [date, setDate] = useState(new Date());
@@ -15,8 +16,8 @@ function Calendarfun() {
       </div>
       <div className='events-list'>
         {/* Frontend peeps: Selected date is where we will want the calendar-list (event date) to appear */}
-        <span className='bold'>Selected Date:</span>{' '}
-        {date.toDateString()}
+        <img className='tack'  src={tack} alt="It's a tack!" />
+        <h3 className='selected-date'>{date.toDateString()}</h3>
         <EventDate />
       </div>
     </div>
