@@ -35,16 +35,17 @@ const typeDefs = gql `
 
     # Queries
     type Query {
-        getAllUsers: [User]
+        getAllUsers: [Users]
         getAllEvents: [Events]
         getAllComments: [Comments]
     }
     # Mutations
     type Mutation {
-        createUser(username: String!, email: String!, password: String!): User
+        createUsers(username: String!, email: String!, password: String!): Users
         createEvent(eventname: String!, description: String!, startdate: Date!, enddate: Date!, username: String!): Events
         createComment(commentText: String!, createdAt: Date!, username: String!, eventname: String!): Comments
         updateEvent(_id: ID!, eventname: String!, startdate: Date!, enddate: Date!): Events
+        login(email: String!, password: String!): Auth
     }`
 
 
