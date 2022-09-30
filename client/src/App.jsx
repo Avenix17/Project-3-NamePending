@@ -14,6 +14,7 @@ import EventInput from "./components/create-event/CreateEvent";
 import SavedEvents from "./components/saved-list/saved-list";
 import Login from "./components/login/Login";
 import "./App.css";
+import Auth from "./utils/auth";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -42,7 +43,6 @@ const client = new ApolloClient({
 function App() {
   const [nav] = useState(["home", "createEvent"]);
   const [currentNav, setCurrentNav] = useState(nav[0]);
-  const [user, setUser] = useState();
 
   // Switch function for navbar, home button leads to homepage and createEvent button leads to Create Event
   function renderComponent(currentNav) {
@@ -66,8 +66,9 @@ function App() {
 
   //If logic for login
   let mainComponent = renderComponent(currentNav);
-  if (!user) {
-    mainComponent = <Login setUser={setUser} />;
+
+  if (!Auth.loggedIn()) {
+    mainComponent = <Login />;
   }
 
   return (
@@ -77,7 +78,6 @@ function App() {
           title="Under a-tack"
           currentNav={currentNav}
           setCurrentNav={setCurrentNav}
-          setUser={setUser}
         />
 
         <main id="main">{ mainComponent }</main>

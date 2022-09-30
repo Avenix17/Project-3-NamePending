@@ -1,11 +1,16 @@
 // Imports
 import React, { useState } from "react";
-import Searchbar from "./navbar components/Searchbar";
-import EventInput from "../create-event/CreateEvent";
 import "./nav.css";
 
+import Auth from '../../utils/auth';
+
 const Navbar = (props) => {
-  const { currentNav, setCurrentNav, setUser } = props;
+  const { currentNav, setCurrentNav } = props;
+
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
 
   return (
     <nav className="topnav">
@@ -21,14 +26,17 @@ const Navbar = (props) => {
 			} */}
 			{/* (The above was created to highlight the text on the page typed in the searchbar) */}
 
+      {Auth.loggedIn() ? (
       <div className="nav-items">
-
         <button id="home" className={`btn btn-dark ${currentNav === 'home' && 'btn-active'}`} onClick={() => setCurrentNav('home')} >Home</button>
 
         <button id="eventInputButton" value="Create Event" className={`btn btn-dark ${currentNav === 'createEvent' && 'btn-active'}`} onClick={() => setCurrentNav('createEvent')}>Create Event</button>
 
-        <button id="logout" onClick={() => {setUser(false)}}>Logout</button>
+        <button id="logout" onClick={logout}>Logout</button>
       </div>
+      ) : (
+        <h2>Please Sign In!</h2>
+      )}
     </nav>
   );
 };
