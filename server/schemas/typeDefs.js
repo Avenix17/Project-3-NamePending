@@ -33,19 +33,27 @@ const typeDefs = gql `
         users: Users
     }
 
+    type Auth {
+        token: ID
+        users: Users
+    }
+
     # Queries
     type Query {
-        getAllUsers: [User]
+        getAllUsers: [Users]
         getAllEvents: [Events]
+        getOneEvent: [Events]
         getAllComments: [Comments]
     }
     # Mutations
     type Mutation {
-        createUser(username: String!, email: String!, password: String!): User
-        createEvent(eventname: String!, description: String!, startdate: Date!, enddate: Date!, username: String!): Events
+        createUser(username: String!, email: String!, password: String!): Users
+        createEvent(eventname: String!, description: String!, startdate: Date!, enddate: Date!): Events
         createComment(commentText: String!, createdAt: Date!, username: String!, eventname: String!): Comments
-        updateEvent(_id: ID!, eventname: String!, startdate: Date!, enddate: Date!): Events
-    }`
+        deleteEvent(_id: ID!): Events
+        login(email: String!, password: String!): Auth
+    }
+`;
 
 
 module.exports = typeDefs;

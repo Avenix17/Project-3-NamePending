@@ -8,14 +8,17 @@ const dateScalar = {
         name: 'Date',
         description: 'Date custom scalar type',
         parseValue(value) {
-        return new Date(value) // value from the client
+        // value from the client
+        return new Date(value) 
         },
         serialize(value) {
-        return value.getTime() // value sent to the client
+        // value sent to the client
+        return value.getTime()
         },
         parseLiteral(ast) {
         if (ast.kind === Kind.INT) {
-            return new Date(+ast.value) // ast value is always in string format
+            // ast value is always in string format
+            return new Date(+ast.value) 
         }
         return null
         }
@@ -33,8 +36,8 @@ const resolver = {
                 return Events.find({})
             },
 
-            getAllEvents: async () => {
-                return Events.find({})
+            getOneEvent: async (parent, { id } ) => {
+                return Events.findById(id)
             },
 
             getAllComments: async () => {
@@ -43,47 +46,46 @@ const resolver = {
         },
     
         Mutation: {
-            createUsers: async (parent, {username, email, password}) => {
-                const userCreation = await Users.create({username, email, password});
-                const token = signToken(userCreation);
-                return { token, userCreation };
-            },            
+            createUser: async (parent, { username, email, password }) => {
+                const userCreation = await Users.create({ username, email, password })
+                const token = signToken(userCreation)
+                return { token, userCreation }
+            },
+
+            createEvent: async (parent, { eventname, description, startdate, enddate }) => {
+                const eventCreation = await Events.create({ eventname, description, startdate, enddate })
+                const token = signToken(eventCreation)
+                return { token, eventCreation }
+            },
+
+            createComment: async (parent, { commentText, createdAt, username, eventname }) => {
+                const commentCreation = await Comments.create({commentText, createdAt, username,eventname})
+                const token = signToken(commentCreation)
+                return { token, commentCreation }
+            },
+
+            deleteEvent: async (parent, { _id }) => {
+                return await Events.findByIdAndRemove(_id)
+            },
 
             login: async (parent, { email, password }) => {
-                const users = await Users.findOne({ email });
+                const users = await Users.findOne({ email })
           
                 if (!users) {
-                  throw new AuthenticationError('Incorrect credentials');
+                  throw new AuthenticationError('Incorrect credentials')
                 }
           
-                const correctPw = await users.isCorrectPassword(password);
+                const correctPw = await users.isCorrectPassword(password)
           
                 if (!correctPw) {
-                  throw new AuthenticationError('Incorrect credentials');
+                  throw new AuthenticationError('Incorrect credentials')
                 }
           
                 const token = signToken(users);
           
                 return { token, users };
               },
-            createComment: async (parent, {commentText, createdAt, username, eventname}) => {
-                const commentCreation = await Comments.create({commentText, createdAt, username,eventname});
-                const token = signToken(commentCreation)
-                return { token, commentCreation};
-            },
-            updateEvent: async (parent, {id, eventname, startdate, enddate}) => {
-                await Events.findByIdAndUpdate(
-                    id,
-                    {
-                        eventname,
-                        startdate,
-                        enddate
-                    }
-                );
-            }
         },
 };
 
-
-
-module.exports =  resolver;
+module.exports = resolver;

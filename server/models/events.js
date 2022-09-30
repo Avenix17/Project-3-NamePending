@@ -46,14 +46,17 @@ const eventsSchema = new Schema ({
         required: true
     },
 
-    username: {
-        type: String, 
-        required: true,
-    },
+    username: [
+        {
+        type: Schema.Types.ObjectId, 
+        ref: 'Users'
+        },
+    ],
+    
     comments: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Comments',
+            ref: 'Comments'
         },
     ],
 

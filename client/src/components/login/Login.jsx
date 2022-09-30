@@ -5,29 +5,60 @@ import tack from "../../assets/tack.png";
 function Login(opts) {
   return (
     <div className="flex">
-      <img className='tack' src={tack} alt="It's a tack!" />
-      <h1>Signup or Login</h1>
-      <form className="sign-in">
-        <div className="input-info">
-          <p>Username:</p>
-          <input type="text" />
+      <img className="tack" src={tack} alt="It's a tack!" />
+      <div className="user-forms">
+        {/* Login Form */}
+        <div className="user-login">
+          <h1>Login</h1>
+          <form className="sign-in">
+            <div className="input-info">
+              <p>Username:</p>
+              <input type="text" />
+            </div>
+
+            <div className="input-info">
+              <p>Password:</p>
+              <input type="password" />
+            </div>
+
+            <div className="button-login">
+              <button
+                className="submit-button"
+                type="submit"
+                onClick={() => {
+                  opts.setUser("Avyrie");
+                }}
+              >
+                Login
+              </button>{" "}
+            </div>
+          </form>
         </div>
 
-        <div className="input-info">
-          <p>Password:</p>
-          <input type="password" />
-        </div>
+        {/* Signup form */}
+        <div className="user-signup">
+          <h1>Signup</h1>
+          <form className="sign-up">
+            <div className="input-info">
+              <p>Username:</p>
+              <input type="text" />
+            </div>
 
-        <div className="button-login">
-          <button className="submit-button" type="submit" onClick={() => {opts.setUser('Avyrie')}}>
-            Login
-          </button>
-          <p>or</p>
-          <button className="submit-button" type="submit">
-            Create User
-          </button>
+            <div className="input-info">
+              <p>Email:</p>
+              <input type="email" />
+            </div>
+
+            <div className="input-info">
+              <p>Password:</p>
+              <input type="password" />
+            </div>
+            <button className="submit-button" type="submit">
+              Create User
+            </button>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
   );
 }
