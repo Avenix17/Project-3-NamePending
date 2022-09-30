@@ -4,6 +4,7 @@ import Calendarfun from "./components/Calendar/Calendar";
 import EventInput from "./components/create-event/CreateEvent";
 import SavedEvents from "./components/saved-list/saved-list";
 import React, { useState } from "react";
+import Login from "./components/login/Login";
 import "./App.css";
 
 function App() {
@@ -37,7 +38,10 @@ function App() {
 
       <main id="main">
         { renderComponent(currentNav) }
+				<Login />
       </main>
+
+			
 
       <Footer id="footer" version="V0.1.1----" />
     </div>

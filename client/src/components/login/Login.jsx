@@ -1,10 +1,10 @@
 import React from "react";
-import '/login.css'
+import './Login.css'
 
-const Login = (props) => {
+function Login() {
 return(
 <div className="flex">
-	<h1>Please Log in</h1>
+	<h1>Signup or Login</h1>
 	<form>
 		<label>
 			<p>Username:</p>
@@ -14,12 +14,14 @@ return(
 			<p>Password:</p>	
 			<input type="password" />
 		</label>
-		<div>
-			<button type="submit">Submit</button>
+		<div className="buttons">
+		<button type="submit">Login</button>
+		<p>Or</p>
+		<button type="submit">Create User.</button>
 		</div>
 	</form>
 </div>	
 	)	
 }
 
-export default Login();
+export default Login;
