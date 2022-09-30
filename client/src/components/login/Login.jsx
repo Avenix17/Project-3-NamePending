@@ -88,7 +88,7 @@ function Login(props) {
               <input
 								placeholder="Username"
 								name="Username"
-								type="Username"
+								type="text"
 								value={loginState.username}
 								onChange={handleLoginChange}
 								/>	
@@ -129,6 +129,7 @@ function Login(props) {
               <input 
 							className="form-input"
               placeholder="Your username"
+              name='username'
 							type="text"
 							value={signupState.username}
               onChange={handleSignupChange}
