@@ -6,12 +6,12 @@ import Navigation from '../navbar/Nav';
 //passing in props to generate Header
 const Header = (props) => {
 	console.log("Head props", props)
-	const { currentNav, setCurrentNav } = props;
+	const { currentNav, setCurrentNav, setUser } = props;
 	return (
 			<header id="header">
 				<div id = "head-content">
 					<h1>Under A-Tack</h1>
-					<Navigation currentNav={currentNav} setCurrentNav={setCurrentNav} />
+					<Navigation currentNav={currentNav} setCurrentNav={setCurrentNav} setUser={setUser} />
 				</div>
 			</header>
 	)

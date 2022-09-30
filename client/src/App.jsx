@@ -8,40 +8,47 @@ import Login from "./components/login/Login";
 import "./App.css";
 
 function App() {
-
-  const [nav] = useState(['home', 'createEvent']);
+  const [nav] = useState(["home", "createEvent"]);
   const [currentNav, setCurrentNav] = useState(nav[0]);
+  const [user, setUser] = useState();
 
   function renderComponent(currentNav) {
     switch (currentNav) {
-      case 'home':
+      case "home":
         return (
-        <div>
-          <Calendarfun />
-          <SavedEvents />
-        </div>);
-      case 'createEvent':
+          <div>
+            <Calendarfun />
+            <SavedEvents />
+          </div>
+        );
+      case "createEvent":
         return <EventInput />;
       default:
         return (
           <div>
             <Calendarfun />
             <SavedEvents />
-
           </div>
-          );
+        );
     }
+  }
+
+  //If logic for login
+  let mainComponent = renderComponent(currentNav);
+  if (!user) {
+    mainComponent = <Login setUser={setUser} />;
   }
 
   return (
     <div className="screen">
-      <Header title="Under a-tack" currentNav={currentNav} setCurrentNav={setCurrentNav} />
+      <Header
+        title="Under a-tack"
+        currentNav={currentNav}
+        setCurrentNav={setCurrentNav}
+        setUser={setUser}
+      />
 
-      <main id="main">
-        { renderComponent(currentNav) }
-      </main>
-
-			
+      <main id="main">{mainComponent}</main>
 
       <Footer id="footer" version="V0.1.1----" />
     </div>

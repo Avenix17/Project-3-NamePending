@@ -2,7 +2,7 @@ import React from "react";
 import "./Login.css";
 import tack from "../../assets/tack.png";
 
-function Login() {
+function Login(opts) {
   return (
     <div className="flex">
       <img className='tack' src={tack} alt="It's a tack!" />
@@ -19,7 +19,7 @@ function Login() {
         </div>
 
         <div className="button-login">
-          <button className="submit-button" type="submit">
+          <button className="submit-button" type="submit" onClick={() => {opts.setUser('Avyrie')}}>
             Login
           </button>
           <p>or</p>
