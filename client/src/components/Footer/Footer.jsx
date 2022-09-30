@@ -8,7 +8,7 @@ const Footer = (props) => {
 			<div id = "footer-content">
 				<div id= "footer-title-container">
 					
-					<h2 id= "footer-title">The Team</h2>
+					<h2 id= "footer-title">The Team:</h2>
 					
 					<div id = "footer-items">
 					<a href="https://github.com/Firm-Tofu10"><button id="name-buttons">Bryson </button></a>
