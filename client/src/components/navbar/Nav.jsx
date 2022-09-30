@@ -20,6 +20,15 @@ const Navbar = (props) => {
 
       {/* Search Bar */}
       <div id="searchBar"><Searchbar /></div>
+			{/* function searchHighlight() {
+				let Search = document.getElementById
+				("Search").value;
+				let pageText = document.getElementById
+				("pageText");
+				console.log("Seach Endpoint");
+			} */}
+			
+			{/* (The above was created to highlight the text on the page typed in the searchbar) */}
 
       <div className="nav-items">
 
