@@ -7,7 +7,22 @@
 #header {
     width: 100%;
     padding-left: 20px;
-    background-color: var(--lightyellow);
+    background-color: var(--lightgreen);
+    box-shadow: 10px 10px 7px rgba(0, 0, 0, .3);
+}
+
+.tack-title {
+    display: flex;
+    flex-direction: row;
+}
+
+#header .tack {
+    padding-right: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 5px;
+    height: 35px;
+    width: 35px;
 }
 
 #head-content {
@@ -16,7 +31,9 @@
     justify-content: space-between;
 }
 
-h1 {
+#header h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 15px;
+    font-size: 50px;
 }
