@@ -28,12 +28,28 @@
 
 #home {
 	margin-right: 20px;
+	font-size: large;
+    padding: 6px 12px;
+    border-radius: 10px;
 }
 
 #eventInputButton {
 	margin-right: 20px;
+	font-size: large;
+    padding: 6px 12px;
+    border-radius: 10px;
 }
 
 #logout {
-	height: 2rem;
+	font-size: large;
+    padding: 6px 12px;
+    border-radius: 10px;
+}
+
+
+.nav-items button:hover{
+    background-color: grey;
+    color: #ffc;
+    transition-duration: .5s;
+    border-radius: 5px;
 }
