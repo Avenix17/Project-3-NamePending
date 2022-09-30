@@ -1,18 +1,12 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
-const path = require('path');
 
-const { typeDefs, resolvers } = require('./schemas');
+const { typeDefs, resolver } = require('./schemas');
 const db = require('./config/connection');
 
 const app = express();
 const PORT = process.env.port || 3001;
-const server = new ApolloServer({
-  typeDefs, resolvers
-})
-
-app.use(express.urlencoded({ extended: true}));
-app.use(express.json());
+const server = new ApolloServer({ typeDefs, resolver })
 
 const startApolloServer = async (typeDefs, resolvers) => {
 await server.start();
@@ -26,4 +20,4 @@ db.once('open', () => {
 })
 };
 
-startApolloServer(typeDefs, resolvers);
+startApolloServer(typeDefs, resolver);

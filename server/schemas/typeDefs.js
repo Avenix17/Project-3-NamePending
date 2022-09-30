@@ -3,7 +3,7 @@ const { gql } = require("apollo-server-express");
 const typeDefs = gql `
     scalar Date
 
-    type User {
+    type Users {
         _id: ID!
         username: String!
         email: String!
@@ -30,14 +30,14 @@ const typeDefs = gql `
 
     # Queries
     type Query {
-        getAllUsers: [User]
+        getAllUsers: [Users]
         getAllEvents: [Events]
         getAllComments: [Comments]
     }
 
     # Mutations 
-    type Mutations {
-        createUser(username: String!, email: String!, password: String!): User
+    type Mutation {
+        createUsers(username: String!, email: String!, password: String!): Users
         createEvent(eventname: String!, description: String!, startdate: Date!, enddate: Date!, username: String!): Events
         createComment(commentText: String!, createdAt: Date!, username: String!, eventname: String!): Comments
     }

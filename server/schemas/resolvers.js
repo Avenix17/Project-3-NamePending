@@ -22,19 +22,30 @@ const dateScalar = {
 
 const resolver = {
     Date: dateScalar,
-    Query: {
-        getAllUsers: async () => {
-            return Users.find({})
+        Query: {
+            getAllUsers: async () => {
+                return Users.find({})
+            },
+
+            getAllEvents: async () => {
+                return Events.find({})
+            },
+
+            getAllComments: async () => {
+                return Comments.find({})
+            }
         },
 
-        getAllEvents: async () => {
-            return Events.find({})
+        Mutation: {
+            createUsers: async (parent, { username, email, password }) => {
+                const userCreation = Users.create(
+                    { username },
+                    { email },
+                    { password }
+                );
+                return userCreation;
+            },
         },
-
-        getAllComments: async () => {
-            return Comments.find({})
-        }
-    }
 };
 
 module.exports =  resolver;
