@@ -16,6 +16,7 @@ const EventInput = () => {
         setCloseEventCreation(true)
     };
 
+
     return (
         <div className='event-container'>
             <img className='tack' src={tack} alt='This is a tack!' />

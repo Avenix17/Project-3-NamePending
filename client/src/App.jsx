@@ -4,6 +4,7 @@ import Calendarfun from "./components/Calendar/Calendar";
 import EventInput from "./components/create-event/CreateEvent";
 import SavedEvents from "./components/saved-list/saved-list";
 import React, { useState } from "react";
+import Login from "./components/login/Login";
 import "./App.css";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <div>
           <Calendarfun />
           <SavedEvents />
+					<Login />
         </div>);
       case 'createEvent':
         return <EventInput />;
@@ -26,7 +28,8 @@ function App() {
           <div>
             <Calendarfun />
             <SavedEvents />
-          </div>);
+          </div>
+          );
     }
   }
 
@@ -37,6 +40,8 @@ function App() {
       <main id="main">
         { renderComponent(currentNav) }
       </main>
+
+			
 
       <Footer id="footer" version="V0.1.1----" />
     </div>
