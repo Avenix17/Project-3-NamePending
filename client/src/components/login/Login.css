@@ -2,8 +2,18 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content:center;
 	border: medium solid black;
 	background-color: whitesmoke;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+		position: absolute;
+		left: 37.5%;
+		top: 40%;
+		width: 25%;
+		height:20%;
 }
 
 .buttons {
