@@ -1,4 +1,5 @@
 const { GraphQLScalarType, Kind } = require('graphql');
+const { resolvers } = require('.');
 const { Users, Events, Comments } = require('../models');
 const { signToken } = require('../utils/auth');
 
@@ -38,10 +39,13 @@ const resolver = {
         },
 
         Mutation: {
-            createUsers: async (parent, {username, email, password}) => {
-                const userCreation = await Users.create({username, email, password});
+            createUsers: async (parent, { username, email, password }) => {
+                const userCreation = await Users.create({ username, email, password });
                 const token = signToken(userCreation);
                 return { token, userCreation };
+            },
+            deleteEvents: async (parent, { _id }) => {
+                return await Events.findByIdAndRemove(_id);
             },
             login: async (parent, { email, password }) => {
                 const users = await Users.findOne({ email });
@@ -50,7 +54,7 @@ const resolver = {
                   throw new AuthenticationError('Incorrect credentials');
                 }
           
-                const correctPw = await user.isCorrectPassword(password);
+                const correctPw = await users.isCorrectPassword(password);
           
                 if (!correctPw) {
                   throw new AuthenticationError('Incorrect credentials');
@@ -63,4 +67,4 @@ const resolver = {
         },
 };
 
-module.exports =  resolver;
+module.exports = resolver;
