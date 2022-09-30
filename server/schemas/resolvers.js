@@ -45,6 +45,23 @@ const resolver = {
                 );
                 return userCreation;
             },
+            login: async (parent, { email, password }) => {
+                const users = await Users.findOne({ email });
+          
+                if (!users) {
+                  throw new AuthenticationError('Incorrect credentials');
+                }
+          
+                const correctPw = await user.isCorrectPassword(password);
+          
+                if (!correctPw) {
+                  throw new AuthenticationError('Incorrect credentials');
+                }
+          
+                const token = signToken(users);
+          
+                return { token, users };
+              },
         },
 };
 
