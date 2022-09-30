@@ -5,15 +5,7 @@ import EventInput from "../create-event/CreateEvent";
 import "./nav.css";
 
 const Navbar = (props) => {
-  // Saved events button
-
-  // Event creation button
-  // const [showEvent, setShowEvent] = useState(false);
-  // const createEventButton = () => {
-  //   setShowEvent(true);
-  // };
-
-  const { currentNav, setCurrentNav } = props;
+  const { currentNav, setCurrentNav, setUser } = props;
 
   return (
     <nav className="topnav">
@@ -27,7 +19,6 @@ const Navbar = (props) => {
 				("pageText");
 				console.log("Seach Endpoint");
 			} */}
-			
 			{/* (The above was created to highlight the text on the page typed in the searchbar) */}
 
       <div className="nav-items">
@@ -36,7 +27,7 @@ const Navbar = (props) => {
 
         <button id="eventInputButton" value="Create Event" className={`btn btn-dark ${currentNav === 'createEvent' && 'btn-active'}`} onClick={() => setCurrentNav('createEvent')}>Create Event</button>
 
-        <button id="logout">Logout</button>
+        <button id="logout" onClick={() => {setUser(false)}}>Logout</button>
       </div>
     </nav>
   );
