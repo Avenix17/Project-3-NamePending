@@ -1,0 +1,67 @@
+:root {
+    --lightgreen: #cfc;
+    --lightpurple: #ccf;
+    --lightyellow: #ffc;
+}
+
+.event-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #ccf;
+    padding: 10px;
+    width: auto;
+    min-width: 50%;
+    height: auto;
+    margin-top: 50px;
+    box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+}
+
+.create-event {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+.input-names {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-weight: bold;
+}
+
+.event-name {
+    margin-bottom: 15px;
+}
+
+.start-date {
+    margin-bottom: 15px;
+}
+
+.end-date {
+    margin-bottom: 15px;
+}
+
+.event-location {
+    margin-bottom: 15px;
+}
+
+.event-description {
+    margin-bottom: 15px;
+}
+
+.button {
+    font-size: large;
+    padding: 6px 12px;
+}
+
+.button:hover{
+    background-color: black;
+    color: #ffc;
+    transition-duration: 1s;
+}

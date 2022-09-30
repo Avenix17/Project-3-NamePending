@@ -1,59 +1,51 @@
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-import Navbar from './components/navbar/Nav';
-import Main from './components/Main/Main';
-// import Calendar from './components/Calendar/Calendar';
-import EventDate from './components/calendar-list/calendar-list';
-import SavedEvents from './components/saved-list/saved-list';
-import React from "react";
-
-import './App.css'
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Calendarfun from "./components/Calendar/Calendar";
+import EventInput from "./components/create-event/CreateEvent";
+import SavedEvents from "./components/saved-list/saved-list";
+import React, { useState } from "react";
+import Login from "./components/login/Login";
+import "./App.css";
 
 function App() {
-	return (
-		<div>
 
-			{/* Header */}
-			<div id='header'>
-				{<Header title="Under a-tack" />}
-			</div>
+  const [nav] = useState(['home', 'createEvent']);
+  const [currentNav, setCurrentNav] = useState(nav[0]);
 
-			<div id='nav'>
-				<Navbar />
-			</div>
+  function renderComponent(currentNav) {
+    switch (currentNav) {
+      case 'home':
+        return (
+        <div>
+          <Calendarfun />
+          <SavedEvents />
+					<Login />
+        </div>);
+      case 'createEvent':
+        return <EventInput />;
+      default:
+        return (
+          <div>
+            <Calendarfun />
+            <SavedEvents />
+          </div>
+          );
+    }
+  }
 
-			<div className="flex">
-				<h1>Please Log in</h1>
-				<form>
-					<label>
-						<p>Usernamer:</p>
-						<input type="text" />
-					</label>
-					<label>
-						<p>Password:</p>
-						<input type="password" />
-					</label>
-					<div>
-						<button type="submit">Submit</button>
-					</div>
-				</form>
-			</div>
+  return (
+    <div className="screen">
+      <Header title="Under a-tack" currentNav={currentNav} setCurrentNav={setCurrentNav} />
 
-			{/* Main */}
-			<div id='main'>
-				{/* <Calendar /> */}
-				<Main />
-				<EventDate />
-				<SavedEvents />
-			</div>
+      <main id="main">
+        { renderComponent(currentNav) }
+      </main>
 
-			{/* Footer */}
-			<div id='footerMain'>
-				<Footer id="footer" version='V0.1.1----' />
-			</div>
+			
 
-		</div>
-	);
+      <Footer id="footer" version="V0.1.1----" />
+    </div>
+  );
 }
 
 export default App;

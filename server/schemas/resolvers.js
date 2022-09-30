@@ -1,5 +1,8 @@
 const { GraphQLScalarType, Kind } = require('graphql');
 const { Users, Events, Comments } = require('../models');
+
+const { signToken } = require('../utils/auth');
+
 const dateScalar = {
     Date: new GraphQLScalarType({
         name: 'Date',
@@ -18,15 +21,22 @@ const dateScalar = {
         }
     })
 }
+
 const resolver = {
     Date: dateScalar,
         Query: {
             getAllUsers: async () => {
                 return Users.find({})
             },
+
             getAllEvents: async () => {
                 return Events.find({})
             },
+
+            getAllEvents: async () => {
+                return Events.find({})
+            },
+
             getAllComments: async () => {
                 return Comments.find({})
             }
@@ -39,4 +49,31 @@ const resolver = {
             
         },
 };
+
+        Mutation: {
+            createUsers: async (parent, {username, email, password}) => {
+                const userCreation = await Users.create({username, email, password});
+                const token = signToken(userCreation);
+                return { token, userCreation };
+            },
+            login: async (parent, { email, password }) => {
+                const users = await Users.findOne({ email });
+          
+                if (!users) {
+                  throw new AuthenticationError('Incorrect credentials');
+                }
+          
+                const correctPw = await user.isCorrectPassword(password);
+          
+                if (!correctPw) {
+                  throw new AuthenticationError('Incorrect credentials');
+                }
+          
+                const token = signToken(users);
+          
+                return { token, users };
+              },
+        },
+};
+
 module.exports =  resolver;
