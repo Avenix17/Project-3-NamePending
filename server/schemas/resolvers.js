@@ -22,19 +22,47 @@ const dateScalar = {
 
 const resolver = {
     Date: dateScalar,
-    Query: {
-        getAllUsers: async () => {
-            return Users.find({})
+        Query: {
+            getAllUsers: async () => {
+                return Users.find({})
+            },
+
+            getAllEvents: async () => {
+                return Events.find({})
+            },
+
+            getAllComments: async () => {
+                return Comments.find({})
+            }
         },
 
-        getAllEvents: async () => {
-            return Events.find({})
+        Mutation: {
+            createUsers: async (parent, { username, email, password }) => {
+                const userCreation = Users.create(
+                    { username },
+                    { email },
+                    { password }
+                );
+                return userCreation;
+            },
+            login: async (parent, { email, password }) => {
+                const users = await Users.findOne({ email });
+          
+                if (!users) {
+                  throw new AuthenticationError('Incorrect credentials');
+                }
+          
+                const correctPw = await user.isCorrectPassword(password);
+          
+                if (!correctPw) {
+                  throw new AuthenticationError('Incorrect credentials');
+                }
+          
+                const token = signToken(users);
+          
+                return { token, users };
+              },
         },
-
-        getAllComments: async () => {
-            return Comments.find({})
-        }
-    }
 };
 
 module.exports =  resolver;
