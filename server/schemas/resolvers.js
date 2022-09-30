@@ -41,15 +41,7 @@ const resolver = {
                 return Comments.find({})
             }
         },
-        Mutation: {
-            createUser(parent, args) {
-                const userCreation = Users.create(args);
-                return userCreation;
-            },
-            
-        },
-};
-
+    
         Mutation: {
             createUsers: async (parent, {username, email, password}) => {
                 const userCreation = await Users.create({username, email, password});
@@ -63,7 +55,7 @@ const resolver = {
                   throw new AuthenticationError('Incorrect credentials');
                 }
           
-                const correctPw = await user.isCorrectPassword(password);
+                const correctPw = await users.isCorrectPassword(password);
           
                 if (!correctPw) {
                   throw new AuthenticationError('Incorrect credentials');
@@ -73,7 +65,24 @@ const resolver = {
           
                 return { token, users };
               },
+            createComment: async (parent, {commentText, createdAt, username, eventname}) => {
+                const commentCreation = await Comments.create({commentText, createdAt, username,eventname});
+                const token = signToken(commentCreation)
+                return { token, commentCreation};
+            },
+            updateEvent: async (parent, {id, eventname, startdate, enddate}) => {
+                await Events.findByIdAndUpdate(
+                    id,
+                    {
+                        eventname,
+                        startdate,
+                        enddate
+                    }
+                );
+            }
         },
 };
+
+
 
 module.exports =  resolver;
