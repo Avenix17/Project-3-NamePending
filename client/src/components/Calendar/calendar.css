@@ -24,6 +24,19 @@
     margin-right: 50px;
     width: 75%;
     background-color: var(--lightgreen);
+    box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.selected-date {
+  text-align: center;
+}
+
+.tack {
+  height: 25px;
+  width: 25px;
 }
 
 /* This is all the basic react-calendar css */
@@ -31,6 +44,10 @@
 .react-calendar {
     height: 100%;
     width: 75% !important;
+    border-style: ridge !important;
+    border-width: 15px !important;
+    border-color: #7B3F00dd !important;
+    box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
 }
 
 react-calendar button:enabled:hover {
@@ -79,11 +96,19 @@ react-calendar button:enabled:hover {
   .react-calendar__year-view .react-calendar__tile,
   .react-calendar__decade-view .react-calendar__tile,
   .react-calendar__century-view .react-calendar__tile {
-    padding: 3.5em 2em;
+    padding: 3.5em 2em;;
   }
   .react-calendar__tile {
     max-width: 100%;
     text-align: center;
     padding: 2em !important;
     background: none;
+    border-style: solid !important;
+    border-width: .5px !important;
+    border-color: black !important;
+  }
+
+  .react-calendar__tile--active {
+    background: var(--lightpurple) !important;
+    color: black !important;
   }

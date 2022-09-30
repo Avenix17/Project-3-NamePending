@@ -38,6 +38,7 @@ main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-bottom: 60px;
 }
 
 body {
