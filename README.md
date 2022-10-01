@@ -7,11 +7,13 @@ If you find yourself bored and looking for something to do come check out the co
 This project uses a React front end and GraphQL server.
 
 ## User Story
-AS A bored person 
+
+AS A bored person
 I WANT to search a community board
 SO THAT I can view events in my area that I can attend
 
 ## Table of Contents
+
 - [Installation](#installation)
 - [Preview](#preview)
 - [Contribution](#contribution)
@@ -24,6 +26,7 @@ To install this project please clone from repo.  Once cloned run `npm i` to inst
 
 ## Preview
 
+Deployed via Heroku
 
 ## Contribution
 
@@ -43,6 +46,7 @@ Ciara: ci.gauntt@gmail.com</br>
 Kate: kate.epatch@gmail.com</br>
 Bryson: BrysonNBenson10@gmail.com</br>
 Micah: micahculverhouse1@gmail.com
-## References 
+
+## References
 
 For help with password:https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications
