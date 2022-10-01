@@ -17,10 +17,11 @@ const typeDefs = gql `
         startdate: Date
         enddate: Date
         comments: [Comments]!
+
     }
     
     type Comments {
-        _id: ID!
+        _id: ID
         commentText: String
         createdAt: Date
         eventname: String

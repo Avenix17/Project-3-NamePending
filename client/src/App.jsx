@@ -54,7 +54,7 @@ function App() {
           </div>
         );
       case "createEvent":
-        return <EventInput />;
+        return <EventInput setCurrentNav={setCurrentNav} />;
       default:
         return (
           <div>
