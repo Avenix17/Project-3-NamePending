@@ -1,0 +1,28 @@
+:root {
+    --lightgreen: #cfc;
+    --lightpurple: #ccf;
+    --lightyellow: #ffc;
+}
+
+/* * {
+    border-style: dotted;
+} */
+
+#calendar-list p {
+    font-family: sans-serif !important;
+    font-size: small !important;
+}
+
+#calendar-list h3 {
+    font-size: large;
+    text-align: center;
+    font-weight: 1000 !important;
+}
+
+.event-card {
+    background-color: var(--lightyellow);
+    box-shadow: 5px 5px 5px rgba(33, 33, 33, .3);
+    padding: 15px;
+    margin-bottom: 5px;
+    width: 175px;
+}

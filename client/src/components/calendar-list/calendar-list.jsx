@@ -16,13 +16,16 @@ const EventDate = (props) => {
     return <div>Loading...</div>;
   }
 
-  let eventsMap = events.map((e) => <li key={e._id}>{e.eventname}</li>);
+  let eventsMap = events.map((e) => (
+    <li className="events" key={e._id}>
+      <div className="event-card">
+        <h3 className="event-name">{e.eventname}</h3>
+        <p className="event-description">{e.description}</p>
+      </div>
+    </li>
+  ));
 
-  return (
-    <div id="calendar-list">
-		{eventsMap}
-    </div>
-  );
+  return <div id="calendar-list">{eventsMap}</div>;
 };
 
 export default EventDate;
