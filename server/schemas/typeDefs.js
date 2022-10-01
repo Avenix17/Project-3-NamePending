@@ -29,14 +29,10 @@ const typeDefs = gql `
     }
 
     type Auth {
-        token: ID
+        token: ID!
         users: Users
     }
 
-    type Auth {
-        token: ID
-        users: Users
-    }
 
     # Queries
     type Query {
@@ -47,7 +43,7 @@ const typeDefs = gql `
     }
     # Mutations
     type Mutation {
-        createUser(username: String!, email: String!, password: String!): Users
+        createUser(username: String!, email: String!, password: String!): Auth
         createEvent(eventname: String!, description: String!, startdate: Date!, enddate: Date!): Events
         createComment(commentText: String!, createdAt: Date!, username: String!, eventname: String!): Comments
         deleteEvent(_id: ID!): Events

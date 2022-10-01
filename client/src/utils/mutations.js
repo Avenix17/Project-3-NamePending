@@ -4,27 +4,29 @@ export const LOGIN = gql `
     mutation login($email: String!, $password: String!) {
         login(email: $email, password: $password) {
         token
-        user {
+        users {
             _id
+            username
         }
         }
     }
 `;
 
-export const createUsers = gql `
-    mutation createUsers(
-        $username: String!
-        $email: String!
+export const CREATE_USER = gql `
+    mutation createUser(
+        $username: String!,
+        $email: String!,
         $password: String!
     ) {
-        createUsers(
-            username: $username
-            email: $email
+        createUser(
+            username: $username,
+            email: $email,
             password: $password
         ) {
             token
-            user {
+            users {
                 _id
+                username
             }
         }
     }
@@ -46,6 +48,7 @@ export const createEvent = gql `
             token
             user {
                 _id
+                username
             }
         }
     }
