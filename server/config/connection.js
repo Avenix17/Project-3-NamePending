@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 // Node will look for this environment variable and if it exists, it will use it. Otherwise, it will assume that you are running this application locally
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost:27017/UnderATack',
+    process.env.MONGODB_URI || 'mongodb+srv://katepatch:2t9tWku5oe9eu2xK@cluster0.acodwnh.mongodb.net/UnderATack?retryWrites=true&w=majority',
 {
     useNewUrlParser: true,
     useUnifiedTopology: true,
