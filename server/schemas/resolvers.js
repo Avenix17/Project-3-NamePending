@@ -37,8 +37,12 @@ const resolver = {
                 return Events.find({})
             },
 
-            getOneEvent: async (parent, { eventId } ) => {
-                return Events.findOne({ _id: eventId })
+            getOneEvent: async (parent, { startdate } ) => {
+                console.log('startdate', startdate);
+                startdate = startdate ? (startdate.substring(0, 10) + 'T00:00:00.000Z') : startdate;
+                console.log('startdate 2: ', startdate);
+                const params = startdate ? { startdate } : {};
+                return Events.find(params);
             },
 
             getAllComments: async () => {
@@ -59,8 +63,8 @@ const resolver = {
                 return { token, eventCreation }
             },
 
-            createComment: async (parent, { commentText, createdAt, eventname }) => {
-                const commentCreation = await Comments.create({commentText, createdAt,eventname})
+            createComment: async (parent, { commentText, createdAt, username, eventname }) => {
+                const commentCreation = await Comments.create({commentText, createdAt, username,eventname})
                 const token = signToken(commentCreation)
                 return { token, commentCreation }
             },

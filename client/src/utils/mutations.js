@@ -45,8 +45,7 @@ export const CREATE_EVENT = gql `
             startdate: $startdate
             enddate: $enddate
         ) {
-            token
-            user {
+            users {
                 _id
                 username
             }

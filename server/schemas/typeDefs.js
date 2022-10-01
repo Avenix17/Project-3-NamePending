@@ -4,31 +4,32 @@ const typeDefs = gql `
     scalar Date
 
     type Users {
-        _id: ID
-        username: String
-        email: String
-        password: String
+        _id: ID!
+        username: String!
+        email: String!
+        password: String!
     }
     
     type Events {
-        _id: ID
-        eventname: String
-        description: String
-        startdate: Date
-        enddate: Date
-        comments: [Comments]!
-
+        _id: ID!
+        eventname: String!
+        description: String!
+        startdate: Date!
+        enddate: Date!
+        username: String!
+        users: Users
     }
     
     type Comments {
-        _id: ID
-        commentText: String
-        createdAt: Date
-        eventname: String
+        _id: ID!
+        commentText: String!
+        createdAt: Date!
+        username: String!
+        eventname: String!
     }
 
     type Auth {
-        token: ID
+        token: ID!
         users: Users
     }
 
@@ -37,7 +38,7 @@ const typeDefs = gql `
     type Query {
         getAllUsers: [Users]
         getAllEvents: [Events]
-        getOneEvent(eventId: ID!): Events
+        getOneEvent(startdate: String!): [Events]
         getAllComments: [Comments]
     }
     # Mutations

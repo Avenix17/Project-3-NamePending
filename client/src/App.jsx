@@ -59,7 +59,6 @@ function App() {
         return (
           <div>
             <Calendarfun />
-            <SavedEvents />
           </div>
         );
     }
