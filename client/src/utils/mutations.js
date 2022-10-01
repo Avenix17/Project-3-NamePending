@@ -53,7 +53,7 @@ export const CREATE_EVENT = gql `
     }
 `;
 
-export const createComment = gql `
+export const CREATE_COMMENT = gql `
     mutation createComment(
         $commentText: String!
         $createdAt: Date!
@@ -74,7 +74,7 @@ export const createComment = gql `
     }
 `;
 
-export const deleteEvent = gql `
+export const DELETE_EVENT = gql `
     mutation deleteEvent(
         $_id: ID!
     ) {
