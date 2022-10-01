@@ -1,99 +1,116 @@
 import React, { useState } from 'react';
 import "./CreateEvent.css";
 import tack from '../../assets/tack.png';
+import { useMutation } from "@apollo/client";
+import { CREATE_EVENT } from '../../utils/mutations';
 
 const EventInput = () => {
 
-    const [eventNameInput, setEventNameInput] = useState("");
-    const [eventDescriptionInput, setEventDescriptionInput] = useState("");
-    const [eventStartDate, setEventStartDate] = useState("");
-    const [eventEndDate, setEventEndDate] = useState("");
-    const [eventLocation, setEventLocation] = useState("");
+    const [formState, setFormState] = useState({ eventname: '', description: '', startdate: '', enddate: '' });
+    const [createEvent, { error, data }] = useMutation(CREATE_EVENT);
 
-    // Event creation close button
-    const [closeEventCreation, setCloseEventCreation] = useState(false)
-    const createEventButton = () => {
-        setCloseEventCreation(true)
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+
+        setFormState({
+            ...formState,
+            [name]: value,
+        });
+    };
+
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        console.log(formState);
+        try {
+            const { data } = await createEvent({
+                variables: { ...formState },
+            });
+        } catch (e) {
+            console.error(e);
+        }
+    };
+
+    if (data) {
+        setTimeout(() => {
+            document.location.reload()
+        }, 1000)
     };
 
 
     return (
         <div className='event-container'>
             <img className='tack' src={tack} alt='This is a tack!' />
-            <form className='create-event'>
-                <h2>Create an Event!!</h2>
+            {data ? (
+                <p>Yippee!</p>
+            ) : (
+                <form className='create-event' onSubmit={handleFormSubmit}>
+                    <h2>Create an Event!!</h2>
 
-                {/* Event Name */}
-                <div className='input-names'>Event Name:
-                    <input
-                        className='event-name'
-                        type='text'
-                        placeholder='Enter event name'
-                        value={eventNameInput}
-                        onChange={(e) => setEventNameInput(e.target.value)}
-                        label='Event Name'
-                    />
-                </div>
+                    {/* Event Name */}
+                    <div className='input-names'>Event Name:
+                        <input
+                            className='event-name'
+                            type='text'
+                            name='eventname'
+                            placeholder='Enter event name'
+                            value={formState.eventname}
+                            onChange={handleChange}
+                            label='Event Name'
+                        />
+                    </div>
 
-                {/* Event Start Date */}
-                <div className='input-names'>Start Date:
-                    <input
-                        className='start-date'
-                        type='date'
-                        value={eventStartDate}
-                        onChange={(e) => setEventStartDate(e.target.value)}
-                        label='Event Start Date'
-                    />
-                </div>
+                    {/* Event Start Date */}
+                    <div className='input-names'>Start Date:
+                        <input
+                            className='start-date'
+                            type='date'
+                            name='startdate'
+                            value={formState.startdate}
+                            onChange={handleChange}
+                            label='Event Start Date'
+                        />
+                    </div>
 
-                {/* Event End Date */}
-                <div className='input-names'>End Date:
-                    <input
-                        className='end-date'
-                        type='date'
-                        value={eventEndDate}
-                        onChange={(e) => setEventEndDate(e.target.value)}
-                        label='Event End Date'
-                    />
-                </div>
+                    {/* Event End Date */}
+                    <div className='input-names'>End Date:
+                        <input
+                            className='end-date'
+                            type='date'
+                            name='enddate'
+                            value={formState.enddate}
+                            onChange={handleChange}
+                            label='Event End Date'
+                        />
+                    </div>
 
-                {/* Event location */}
-                <div className='input-names'>Event Location:
-                    <input
-                        className='event-location'
-                        placeholder='Location of event'
-                        type='text'
-                        value={eventLocation}
-                        onChange={(e) => setEventLocation(e.target.value)}
-                        label='Event Location'
-                    />
-                </div>
+                    {/* Event Description */}
+                    <div className='input-names'>Event Description:
+                        <textarea
+                            className='event-description'
+                            placeholder='Enter event description'
+                            name='description'
+                            value={formState.description}
+                            onChange={handleChange}
+                            label='Event Description'
+                        />
+                    </div>
 
-                {/* Event Description */}
-                <div className='input-names'>Event Description:
-                    <textarea
-                        className='event-description'
-                        placeholder='Enter event description'
-                        value={eventDescriptionInput}
-                        onChange={(e) => setEventDescriptionInput(e.target.value)}
-                        label='Event Description'
-                    />
-                </div>
+                    <div id='close-button'>
 
-                <div id='close-button'>
+                        {/* Creates event */}
+                        <button className='button' id='eventInputButton' type='submit'>
+                            Create!
+                        </button>
 
-                    {/* Creates event */}
-                    <button className='button' id='eventInputButton' onClick={createEventButton} value="Create Event">
-                        {closeEventCreation ? <EventInput /> : null}
-                        Create!
-                    </button>
+                        {/* Send back to homepage */}
+                        <button className='button' id='returntohome'>
+                            Return to Home
+                        </button>
+                    </div>
+                </form>
+            )}
 
-                    {/* Send back to homepage */}
-                    <button className='button' id='returntohome'>
-                        Return to Home
-                    </button>
-                </div>
-            </form>
+            {error && <div className="error-message">{error.message}</div>}
         </div>
     );
 
