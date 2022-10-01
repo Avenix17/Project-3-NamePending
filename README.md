@@ -49,4 +49,4 @@ Micah: micahculverhouse1@gmail.com
 
 ## References
 
-For help with password:https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications
+For help with password: <https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications>
