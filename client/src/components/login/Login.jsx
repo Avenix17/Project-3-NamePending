@@ -1,4 +1,3 @@
-// import React from "react";
 import React, { useState } from "react";
 import "./Login.css";
 import tack from "../../assets/tack.png";
@@ -7,9 +6,10 @@ import { LOGIN, CREATE_USER } from "../../utils/mutations.js";
 
 import auth from "../../utils/auth";
 
-function Login(props) {
+function Login() {
+
   const [loginState, setLoginState] = useState({ email: "", password: "" });
-  const [login] = useMutation(LOGIN);
+  const [login, { error: loginErr, data: loginData}] = useMutation(LOGIN);
 
   const handleLoginChange = (event) => {
     const { name, value } = event.target;
@@ -41,6 +41,7 @@ function Login(props) {
     });
   };
 
+  // Signup logic
   const [signupState, setsignupState] = useState({
     username: "",
     email: "",
@@ -80,39 +81,45 @@ function Login(props) {
         {/* Login Form */}
         <div className="user-login">
           <h1>Login</h1>
-          <form className="sign-in" onSubmit={handleLoginFormSubmit}>
-            <div className="input-info">
-              <p>Username:</p>
-              <input
-                placeholder="Username"
-                name="username"
-                type="text"
-                value={loginState.username}
-                onChange={handleLoginChange}
-              />
-            </div>
+          {loginData ? (
+            <p>Yippee!</p>
+          ) : (
+            <form className="sign-in" onSubmit={handleLoginFormSubmit}>
+              <div className="input-info">
+                <p>Email:</p>
+                <input
+                  placeholder="Email"
+                  name="email"
+                  type="email"
+                  value={loginState.email}
+                  onChange={handleLoginChange}
+                />
+              </div>
 
-            <div className="input-info">
-              <p>Password:</p>
-              <input
-                placeholder="********"
-                name="password"
-                type="password"
-                value={loginState.password}
-                onChange={handleLoginChange}
-              />
-            </div>
+              <div className="input-info">
+                <p>Password:</p>
+                <input
+                  placeholder="********"
+                  name="password"
+                  type="password"
+                  value={loginState.password}
+                  onChange={handleLoginChange}
+                />
+              </div>
 
-            <div className="button-login">
-              <button
-                className="submit-button"
-                type="submit"
-                style={{ cursor: "pointer" }}
-              >
-                Login
-              </button>{" "}
-            </div>
-          </form>
+              <div className="button-login">
+                <button
+                  className="submit-button"
+                  type="submit"
+                  style={{ cursor: "pointer" }}
+                >
+                  Login
+                </button>{" "}
+              </div>
+            </form>
+          )}
+
+          {loginErr && <div className="error-message">{loginErr.message}</div>}
         </div>
 
         {/* Signup form */}
@@ -163,9 +170,7 @@ function Login(props) {
             </form>
           )}
 
-          {error && (
-            <div className="error-message">{error.message}</div>
-          )}
+          {error && <div className="error-message">{error.message}</div>}
         </div>
       </div>
     </div>

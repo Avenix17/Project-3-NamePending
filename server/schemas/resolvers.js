@@ -1,3 +1,4 @@
+const { AuthenticationError } = require('apollo-server-express');
 const { GraphQLScalarType, Kind } = require('graphql');
 const { Users, Events, Comments } = require('../models');
 
