@@ -37,8 +37,8 @@ const resolver = {
                 return Events.find({})
             },
 
-            getOneEvent: async (parent, { id } ) => {
-                return Events.findById(id)
+            getOneEvent: async (parent, { eventId } ) => {
+                return Events.findOne({ _id: eventId })
             },
 
             getAllComments: async () => {
@@ -59,8 +59,8 @@ const resolver = {
                 return { token, eventCreation }
             },
 
-            createComment: async (parent, { commentText, createdAt, username, eventname }) => {
-                const commentCreation = await Comments.create({commentText, createdAt, username,eventname})
+            createComment: async (parent, { commentText, createdAt, eventname }) => {
+                const commentCreation = await Comments.create({commentText, createdAt,eventname})
                 const token = signToken(commentCreation)
                 return { token, commentCreation }
             },
