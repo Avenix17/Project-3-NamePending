@@ -54,7 +54,7 @@ function App() {
           </div>
         );
       case "createEvent":
-        return <EventInput setCurrentNav={setCurrentNav} />;
+        return <EventInput />;
       default:
         return (
           <div>
@@ -80,6 +80,7 @@ function App() {
           currentNav={currentNav}
           setCurrentNav={setCurrentNav}
         />
+
         <main id="main">{ mainComponent }</main>
 
         <Footer id="footer" version="V0.1.1----" />

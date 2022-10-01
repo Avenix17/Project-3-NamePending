@@ -22,7 +22,13 @@ export const CREATE_USER = gql `
             username: $username,
             email: $email,
             password: $password
-        )
+        ) {
+            token
+            users {
+                _id
+                username
+            }
+        }
     }
 `;
 
@@ -38,11 +44,17 @@ export const CREATE_EVENT = gql `
             description: $description
             startdate: $startdate
             enddate: $enddate
-        ) 
+        ) {
+            token
+            user {
+                _id
+                username
+            }
+        }
     }
 `;
 
-export const createComment = gql `
+export const CREATE_COMMENT = gql `
     mutation createComment(
         $commentText: String!
         $createdAt: Date!
@@ -54,11 +66,16 @@ export const createComment = gql `
             createdAt: $createdAt
             username: $username
             eventname: $eventname
-        )
+        ) {
+            token
+            user {
+                _id
+            }
+        }
     }
 `;
 
-export const deleteEvent = gql `
+export const DELETE_EVENT = gql `
     mutation deleteEvent(
         $_id: ID!
     ) {
