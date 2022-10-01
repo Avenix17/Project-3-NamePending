@@ -80,7 +80,6 @@ function App() {
           currentNav={currentNav}
           setCurrentNav={setCurrentNav}
         />
-        <Test />
         <main id="main">{ mainComponent }</main>
 
         <Footer id="footer" version="V0.1.1----" />
