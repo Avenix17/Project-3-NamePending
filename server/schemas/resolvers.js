@@ -37,8 +37,12 @@ const resolver = {
                 return Events.find({})
             },
 
-            getOneEvent: async (parent, { id } ) => {
-                return Events.findById(id)
+            getOneEvent: async (parent, { startdate } ) => {
+                console.log('startdate', startdate);
+                startdate = startdate ? (startdate.substring(0, 10) + 'T00:00:00.000Z') : startdate;
+                console.log('startdate 2: ', startdate);
+                const params = startdate ? { startdate } : {};
+                return Events.find(params);
             },
 
             getAllComments: async () => {

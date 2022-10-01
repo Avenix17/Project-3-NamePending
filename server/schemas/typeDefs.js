@@ -38,7 +38,7 @@ const typeDefs = gql `
     type Query {
         getAllUsers: [Users]
         getAllEvents: [Events]
-        getOneEvent: [Events]
+        getOneEvent(startdate: String!): [Events]
         getAllComments: [Comments]
     }
     # Mutations

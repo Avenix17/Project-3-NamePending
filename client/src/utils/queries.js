@@ -1,25 +1,26 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_EVENTS = gql `
-    {
+export const QUERY_EVENTS = gql`
+    query getAllEvents {
         events {
-            _id: ID!
-            eventname: String!
-            description: String!
-            startdate: Date!
-            enddate: Date!
-            username: String!
-            comments: {
-                commentText
-            }
+            _id
+            eventname
+            description
+            startdate
+            enddate
+            username
         }
     }
 `;
 
-export const QUERY_ONEEVENT = gql `
-    query getOneEvent($events: ID) {
-        events(events: $events) {
-            
+export const QUERY_ONE_DAY = gql`
+    query dateEvents($startdate: String!) {
+        getOneEvent(startdate: $startdate) {
+            _id
+            eventname
+            description
+            startdate
+            enddate
         }
     }
 `;

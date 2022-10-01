@@ -18,7 +18,7 @@ function Calendarfun() {
         {/* Frontend peeps: Selected date is where we will want the calendar-list (event date) to appear */}
         <img className='tack'  src={tack} alt="It's a tack!" />
         <h3 className='selected-date'>{date.toDateString()}</h3>
-        <EventDate />
+        <EventDate date={date}/>
       </div>
     </div>
   );

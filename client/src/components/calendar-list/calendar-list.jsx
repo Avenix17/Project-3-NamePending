@@ -1,25 +1,28 @@
-import React from 'react';
-import './calendar-list.css'
+import React from "react";
+import "./calendar-list.css";
+import { useQuery } from "@apollo/client";
+import { QUERY_ONE_DAY } from "../../utils/queries";
 
-const EventDate = () => {
-	return (
-		<div id = 'calendar-list'>
-			Calendar List
+const EventDate = (props) => {
+  const { date } = props;
 
-		<div id = 'date'>
+  const { loading, data } = useQuery(QUERY_ONE_DAY, {
+    variables: { startdate: date },
+  });
 
-			<div id = 'list-items'>
+  const events = data?.getOneEvent || [];
 
-			</div>
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
-		</div>
+  let eventsMap = events.map((e) => <li key={e._id}>{e.eventname}</li>);
 
-		</div>
-		
-		
-		
-		
-		)
+  return (
+    <div id="calendar-list">
+		{eventsMap}
+    </div>
+  );
 };
 
-export default EventDate
+export default EventDate;
