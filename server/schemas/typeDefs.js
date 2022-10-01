@@ -17,7 +17,7 @@ const typeDefs = gql `
         startdate: Date!
         enddate: Date!
         username: String!
-        comments: [Comments]
+        users: Users
     }
     
     type Comments {

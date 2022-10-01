@@ -32,7 +32,7 @@ export const CREATE_USER = gql `
     }
 `;
 
-export const createEvent = gql `
+export const CREATE_EVENT = gql `
     mutation createEvent(
         $eventname: String!
         $description: String!
@@ -45,8 +45,7 @@ export const createEvent = gql `
             startdate: $startdate
             enddate: $enddate
         ) {
-            token
-            user {
+            users {
                 _id
                 username
             }
