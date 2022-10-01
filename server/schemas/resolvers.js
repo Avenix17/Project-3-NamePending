@@ -63,8 +63,8 @@ const resolver = {
                 return { token, eventCreation }
             },
 
-            createComment: async (parent, { commentText, createdAt, eventname }) => {
-                const commentCreation = await Comments.create({commentText, createdAt,eventname})
+            createComment: async (parent, { commentText, createdAt, username, eventname }) => {
+                const commentCreation = await Comments.create({commentText, createdAt, username,eventname})
                 const token = signToken(commentCreation)
                 return { token, commentCreation }
             },

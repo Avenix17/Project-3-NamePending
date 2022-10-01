@@ -22,7 +22,13 @@ export const CREATE_USER = gql `
             username: $username,
             email: $email,
             password: $password
-        )
+        ) {
+            token
+            users {
+                _id
+                username
+            }
+        }
     }
 `;
 
@@ -38,7 +44,12 @@ export const CREATE_EVENT = gql `
             description: $description
             startdate: $startdate
             enddate: $enddate
-        ) 
+        ) {
+            users {
+                _id
+                username
+            }
+        }
     }
 `;
 
@@ -54,7 +65,12 @@ export const createComment = gql `
             createdAt: $createdAt
             username: $username
             eventname: $eventname
-        )
+        ) {
+            token
+            user {
+                _id
+            }
+        }
     }
 `;
 
