@@ -4,8 +4,9 @@ import tack from '../../assets/tack.png';
 import { useMutation } from "@apollo/client";
 import { CREATE_EVENT } from '../../utils/mutations';
 
-const EventInput = () => {
+const EventInput = (props) => {
 
+    const { setCurrentNav } = props;
     const [formState, setFormState] = useState({ eventname: '', description: '', startdate: '', enddate: '' });
     const [createEvent, { error, data }] = useMutation(CREATE_EVENT);
 
@@ -31,9 +32,7 @@ const EventInput = () => {
     };
 
     if (data) {
-        setTimeout(() => {
-            document.location.reload()
-        }, 1000)
+        setCurrentNav('home');
     };
 
 
@@ -103,7 +102,7 @@ const EventInput = () => {
                         </button>
 
                         {/* Send back to homepage */}
-                        <button className='button' id='returntohome'>
+                        <button className='button' id='returntohome' onClick={() => {setCurrentNav('home')}}>
                             Return to Home
                         </button>
                     </div>
